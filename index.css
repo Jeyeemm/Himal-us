@@ -1,7 +1,7 @@
 /* Set default font and background colors */
 @font-face {
   font-family: HighTide;
-  src: url(fonts/HighTide-Sans.ttf);
+  src: url(fonts/HighTide-Sans.ttf) format('truetype');
 }
 
 div {
