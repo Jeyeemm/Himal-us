@@ -1,4 +1,13 @@
 /* Set default font and background colors */
+@font-face {
+  font-family: HighTide;
+  src: url(fonts/HighTide-Sans.ttf);
+}
+
+div {
+  font-family: HighTide;
+}
+
 body {
     font-family: Arial, sans-serif;
 
@@ -6,7 +15,7 @@ body {
     background-size: cover; /* Adjust as needed */
     background-repeat: no-repeat;
     height: 100vh;
-
+    
     margin: 0;
     padding: 0;
   }
@@ -17,11 +26,7 @@ body {
     color: #fff;
     padding: 20px;
   }
-  
-  header h1 {
-    margin: 0;
-  }
-  
+    
   /* Style the navigation bar */
   nav ul {
     list-style: none;
@@ -52,5 +57,10 @@ body {
   
   section {
     margin-bottom: 30px;
+  }
+
+  h2 {
+    font-family: HighTide;
+    font-size: 80px;
   }
   
