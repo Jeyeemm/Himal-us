@@ -1,66 +1,96 @@
-/* Set default font and background colors */
-@font-face {
-  font-family: HighTide;
-  src: url(fonts/HighTide-Sans.ttf) format('truetype');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto' sans-serif;
+  list-style: none;
+  text-decoration: none;
 }
-
-div {
-  font-family: HighTide;
-}
-
 body {
-    font-family: Arial, sans-serif;
-
-    background-image: url("assets/bg.jpg");
-    background-size: cover; /* Adjust as needed */
-    background-repeat: no-repeat;
-    height: 100vh;
-    
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Style the header */
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-  }
-    
-  /* Style the navigation bar */
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Style the main content sections */
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  section {
-    margin-bottom: 30px;
-  }
-
-  h2 {
-    font-family: HighTide;
-    font-size: 80px;
-  }
-  
+  background-image: url("assets/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+nav {
+  display: flex;
+  align-items: center;
+  padding: 20px 8%;
+}
+nav ul {
+  flex: 1;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 20%;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 50px;
+  letter-spacing: 0.05em;
+}
+h1 {
+  text-align: center;
+  margin-top: 8%;
+  color: white;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  cursor: default;
+}
+p {
+  margin-top: 2%;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 200;
+  font-size: 40px;
+  letter-spacing: 0.2em;
+  cursor: default;
+}
+/*readButton*/
+.container {
+  margin-top: 2%;
+  text-align: center;
+}
+.btn {
+  border: 1px solid gold;
+  background: none;
+  padding: 10px 20px;
+  font-family: 'Roboto';
+  color: gold;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover {
+  color: white;
+}
+.btn::before {
+  top: 0;
+  border-radius: 0 0 50% 50%;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: gold;
+  z-index: -1;
+  transition: 0.8s;
+}
+.btn:hover::before {
+  height: 180%;
+}

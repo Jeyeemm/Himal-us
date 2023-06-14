@@ -1,13 +1,66 @@
+* {
+	font-family: 'Roboto' sans-serif;
+  	list-style: none;
+  	text-decoration: none;
+}
+html {
+	scroll-behavior: smooth;
+}
 body {
+    background-color: #343434;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
 header {
     padding: 10px;
 }
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
+.navbar {
+	margin-top: 12%;
+	margin-left: 70px;
+	height: 100vh;
+	position: fixed;
+	background-color: #343434;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	overflow-x: 0;
+}
+.navbar a {
+	list-style: none;
+}
+.navbar ol li {
+	padding: 20px 0px;
+}
+.music-button {
+      background-image: url('assets/icons/music.png');
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+}
+.page-indicator {
+      position: fixed;
+      top: 10px;
+      right: 10%;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-color: gold;
+      border-radius: 5px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      background-color: gold;
+}
+@media
+(prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+img {
+	object-fit: cover;

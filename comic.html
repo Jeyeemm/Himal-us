@@ -4,18 +4,239 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="comic.css">
-        <title>My Website</title>
+        <!--JSScript-->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!--Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     </head>
     <body>
-    <header>
-        <h1>Comic</h1>
-      </header>
-    <main>
-        <section>
-        <img src="assets/4.png" class="center">
-        <img src="assets/2.gif" class="center">
-        <img src="assets/3.gif" class="center">
-    </section>
-    </main>
+        <div class="navbar">
+            <ol>
+                <li>
+                    <a href="index.html">
+                        <img src="assets/icons/home.png">
+                    </a>
+                </li>
+                <li>
+                    <img src="assets/icons/zoom.png">
+                </li>
+                <li>
+                    <button class="music-button" onclick="toggleMusic()"></button>
+                </li>
+                <li>
+                    <a href="about.html">
+                        <img src="assets/icons/about.png">
+                    </a>
+                </li>
+            </ol>
+        </div>
+        <div class="page-indicator" id="page-indicator">1/52</div>
+        <main>
+            <!-- Page sections here -->
+            <section id="page-1">
+            <img src="assets/pages/p1.png">
+        </section>
+        <section id="page-2">
+            <img src="assets/pages/p2.png">
+        </section >
+        <section id="page-3">
+            <img src="assets/pages/p3.gif">
+        </section>
+        <section id="page-4">
+            <img src="assets/pages/p4.png">
+        </section>
+        <section id="page-5">
+            <img src="sb/Storyboard Ongoing_001.png">
+        </section>
+        <section id="page-6">
+            <img src="sb/Storyboard Ongoing_002.png">
+        </section>
+        <section id="page-7">
+            <img src="sb/Storyboard Ongoing_003.png">
+        </section>
+        <section id="page-8">
+            <img src="sb/Storyboard Ongoing_004.png">
+        </section>
+        <section id="page-9">
+            <img src="sb/Storyboard Ongoing_005.png">
+        </section >
+        <section id="page-10">
+            <img src="sb/Storyboard Ongoing_006.png">
+        </section>
+        <section id="page-11">
+            <img src="sb/Storyboard Ongoing_007.png">
+        </section>
+        <section id="page-12">
+            <img src="sb/Storyboard Ongoing_008.png">
+        </section>
+        <section id="page-13">
+            <img src="sb/Storyboard Ongoing_009.png">
+        </section>
+        <section id="page-14">
+            <img src="sb/Storyboard Ongoing_010.png">
+        </section>
+        <section id="page-15">
+            <img src="sb/Storyboard Ongoing_011.png">
+        </section>
+        <section id="page-16">
+            <img src="sb/Storyboard Ongoing_012.png">
+        </section>
+        <section id="page-17">
+            <img src="sb/Storyboard Ongoing_013.png">
+        </section>
+        <section id="page-18">
+            <img src="sb/Storyboard Ongoing_014.png">
+        </section>
+        <section id="page-19">
+            <img src="sb/Storyboard Ongoing_015.png">
+        </section >
+        <section id="page-20">
+            <img src="sb/Storyboard Ongoing_016.png">
+        </section>
+        <section id="page-21">
+            <img src="sb/Storyboard Ongoing_017.png">
+        </section>
+        <section id="page-22">
+            <img src="sb/Storyboard Ongoing_018.png">
+        </section>
+        <section id="page-23">
+            <img src="sb/Storyboard Ongoing_019.png">
+        </section>
+        <section id="page-24">
+            <img src="sb/Storyboard Ongoing_020.png">
+        </section>
+        <section id="page-25">
+            <img src="sb/Storyboard Ongoing_021.png">
+        </section>
+        <section id="page-26">
+            <img src="sb/Storyboard Ongoing_022.png">
+        </section>
+        <section id="page-27">
+            <img src="sb/Storyboard Ongoing_023.png">
+        </section>
+        <section id="page-28">
+            <img src="sb/Storyboard Ongoing_024.png">
+        </section>
+        <section id="page-29">
+            <img src="sb/Storyboard Ongoing_025.png">
+        </section >
+        <section id="page-30">
+            <img src="sb/Storyboard Ongoing_026.png">
+        </section>
+        <section id="page-31">
+            <img src="sb/Storyboard Ongoing_027.png">
+        </section>
+        <section id="page-32">
+            <img src="sb/Storyboard Ongoing_028.png">
+        </section>
+        <section id="page-33">
+            <img src="sb/Storyboard Ongoing_029.png">
+        </section>
+        <section id="page-34">
+            <img src="sb/Storyboard Ongoing_030.png">
+        </section>
+        <section id="page-35">
+            <img src="sb/Storyboard Ongoing_031.png">
+        </section>
+        <section id="page-36">
+            <img src="sb/Storyboard Ongoing_032.png">
+        </section>
+        <section id="page-37">
+            <img src="sb/Storyboard Ongoing_033.png">
+        </section>
+        <section id="page-38">
+            <img src="sb/Storyboard Ongoing_034.png">
+        </section>
+        <section id="page-39">
+            <img src="sb/Storyboard Ongoing_035.png">
+        </section >
+        <section id="page-40">
+            <img src="sb/Storyboard Ongoing_036.png">
+        </section>
+        <section id="page-41">
+            <img src="sb/Storyboard Ongoing_037.png">
+        </section>
+        <section id="page-42">
+            <img src="sb/Storyboard Ongoing_038.png">
+        </section>
+        <section id="page-43">
+            <img src="sb/Storyboard Ongoing_039.png">
+        </section>
+        <section id="page-44">
+            <img src="sb/Storyboard Ongoing_040.png">
+        </section>
+        <section id="page-45">
+            <img src="sb/Storyboard Ongoing_041.png">
+        </section>
+        <section id="page-46">
+            <img src="sb/Storyboard Ongoing_042.png">
+        </section>
+        <section id="page-47">
+            <img src="sb/Storyboard Ongoing_043.png">
+        </section>
+        <section id="page-48">
+            <img src="sb/Storyboard Ongoing_044.png">
+        </section>
+        <section id="page-49">
+            <img src="sb/Storyboard Ongoing_045.png">
+        </section >
+        <section id="page-50">
+            <img src="sb/Storyboard Ongoing_046.png">
+        </section>
+        <section id="page-51">
+            <img src="sb/Storyboard Ongoing_047.png">
+        </section>
+        <section id="page-52">
+            <img src="sb/Storyboard Ongoing_048.png">
+        </section>
+        </main>
+
+        <script>
+            // Audio
+            var audio = new Audio('assets/sounds/music.mp3');
+            var isPlaying = false;
+
+            function toggleMusic() {
+              if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+              } else {
+                audio.play();
+                isPlaying = true;
+              }
+            }
+
+            // Page indicator
+            var indicator = document.getElementById('page-indicator');
+            var sections = document.querySelectorAll('section');
+            var totalPages = sections.length;
+
+            // Function to update the page indicator based on scrolling
+            function updatePageIndicator() {
+              var currentPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+              var currentPage = 0;
+              for (var i = 0; i < sections.length; i++) {
+                var section = sections[i];
+                var sectionTop = section.offsetTop;
+                var sectionHeight = section.offsetHeight;
+
+                if (currentPosition >= sectionTop && currentPosition < sectionTop + sectionHeight) {
+                  currentPage = i + 1;
+                  break;
+                }
+              }
+
+              indicator.textContent = currentPage + '/' + totalPages;
+            }
+
+            // Event listener for scroll events
+            window.addEventListener('scroll', updatePageIndicator);
+
+            // Initial update of the page indicator
+            updatePageIndicator();
+        </script>
     </body>
 </html>
