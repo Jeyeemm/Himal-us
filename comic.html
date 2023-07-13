@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html>
+
     <head>
+
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="comic.css">
-        <!--JSScript-->
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <!--Font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+        
+        <!--Font & Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2f24afeea0.js" crossorigin="anonymous"></script>
+   
     </head>
     <body>
-        <div class="navbar">
-            <ol>
-                <li>
-                    <a href="index.html">
-                        <img src="assets/icons/home.png">
-                    </a>
-                </li>
-                <li>
-                    <img src="assets/icons/zoom.png">
-                </li>
-                <li>
-                    <button class="music-button" onclick="toggleMusic()"></button>
-                </li>
-                <li>
-                    <a href="about.html">
-                        <img src="assets/icons/about.png">
-                    </a>
-                </li>
-            </ol>
+
+        
+        <!--Navbar-->
+
+    <div class="sidebar">
+        <div class="top">
+          <div class="logo">
+            <i class="fa-solid fa-eye"></i> 
+            <span>Himal-us</span>
+          </div>
+          <i class="fa-solid fa-bars" id="btn"></i>
         </div>
-        <div class="page-indicator" id="page-indicator">1/52</div>
+  
+          <ul>
+            <li> 
+              <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span class="nav-item">Home</span>
+              </a>
+            </li>
+            <li> 
+              <a href="comic.html">
+                <i class="fa-solid fa-book"></i>
+                <span class="nav-item">Read</span>
+              </a>
+            </li>
+            <li> 
+              <a href="about.html">
+                <i class="fa-solid fa-address-card"></i>
+                <span class="nav-item">About</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+        
+      <div class="page-indicator" id="page-indicator">1/52</div>
         <main>
+
             <!-- Page sections here -->
+
             <section id="page-1">
             <img src="assets/pages/p1.png">
         </section>
@@ -191,9 +213,11 @@
         <section id="page-52">
             <img src="sb/Storyboard Ongoing_048.png">
         </section>
+
         </main>
 
         <script>
+
             // Audio
             var audio = new Audio('assets/sounds/music.mp3');
             var isPlaying = false;
@@ -207,6 +231,13 @@
                 isPlaying = true;
               }
             }
+
+            //Sidebar
+            let btn = document.querySelector('#btn')
+            let sidebar = document.querySelector('.sidebar')
+             btn.onclick = function () {
+            sidebar.classList.toggle('active')
+             };
 
             // Page indicator
             var indicator = document.getElementById('page-indicator');

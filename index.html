@@ -1,33 +1,89 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css">
-    <!--Font-->
+
+    <title>Himal-us</title>
+
+    <!--Favicons-->
+    <link href="assets/icons/favicon.svg" rel="icon">
+
+    <!--Font & Icons-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2f24afeea0.js" crossorigin="anonymous"></script>
+  
   </head>
+
   <body>
+
     <header>
+
   <!--Navbar-->
-    <nav>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-      </ul>
-    </nav>
-    </header>
-    <main>
-      <h1>HIMAL-US</h1>
-      <p>The Legend</p>
-  <!--Button-->
-      <div class="container">
-        <a href="comic.html">
-        <button class="btn">Read Now</button>
-        </a>
+    <div class="sidebar">
+      <div class="top">
+        <div class="logo">
+          <i class="fa-solid fa-eye"></i> 
+          <span>Himal-us</span>
+        </div>
+        <i class="fa-solid fa-bars" id="btn"></i>
       </div>
+
+        <ul>
+          <li> 
+            <a href="index.html">
+              <i class="fa-solid fa-house"></i>
+              <span class="nav-item">Home</span>
+            </a>
+          </li>
+          <li> 
+            <a href="comic.html">
+              <i class="fa-solid fa-book"></i>
+              <span class="nav-item">Read</span>
+            </a>
+          </li>
+          <li> 
+            <a href="about.html">
+              <i class="fa-solid fa-address-card"></i>
+              <span class="nav-item">About</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    </header>
+
+    <main>
+
+        <div class="imgContainer">
+          <img src="assets/logo.png">
+        </div>
+
+        <div class="textContainer">
+          <p>The Legend</p>
+        </div>
+
+        <div class="readButton">
+          <a href="comic.html">
+          <button class="btn read">Read Now</button>
+          </a>
+        </div>
+
     </main>
+
   </body>
+
+  <script>
+    let btn = document.querySelector('#btn')
+    let sidebar = document.querySelector('.sidebar')
+    btn.onclick = function () {
+      sidebar.classList.toggle('active')
+    };
+  </script>
+
 </html>

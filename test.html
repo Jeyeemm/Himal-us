@@ -1,128 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="comic.css">
-        <!--JSScript-->
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <!--Font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="navbar">
-            <ol>
-                <li>
-                    <a href="index.html">
-                        <img src="assets/icons/home.png">
-                    </a>
-                </li>
-                <li>
-                    <img src="assets/icons/zoom.png">
-                </li>
-                <li>
-                    <button class="music-button" onclick="toggleMusic()"></button>
-                </li>
-                <li>
-                    <a href="about.html">
-                        <img src="assets/icons/about.png">
-                    </a>
-                </li>
-            </ol>
-        </div>
-        <div class="page-indicator" id="page-indicator">1/14</div>
-        <main>
-            <!-- Page sections here -->
-            <section id="page-1">
-            <img src="assets/pages/p1.png">
-        </section>
-        <section id="page-2">
-            <img src="assets/pages/p2.png">
-        </section >
-        <section id="page-3">
-            <img src="assets/pages/p3.gif">
-        </section>
-        <section id="page-4">
-            <img src="assets/pages/p4.png">
-        </section>
-        <section id="page-5">
-            <img src="sb/Storyboard Ongoing_001.png">
-        </section>
-        <section id="page-6">
-            <img src="sb/Storyboard Ongoing_002.png">
-        </section>
-        <section id="page-7">
-            <img src="sb/Storyboard Ongoing_003.png">
-        </section>
-        <section id="page-8">
-            <img src="sb/Storyboard Ongoing_004.png">
-        </section>
-        <section id="page-9">
-            <img src="sb/Storyboard Ongoing_005.png">
-        </section >
-        <section id="page-10">
-            <img src="sb/Storyboard Ongoing_006.png">
-        </section>
-        <section id="page-11">
-            <img src="sb/Storyboard Ongoing_007.png">
-        </section>
-        <section id="page-12">
-            <img src="sb/Storyboard Ongoing_008.png">
-        </section>
-        <section id="page-13">
-            <img src="sb/Storyboard Ongoing_009.png">
-        </section>
-        <section id="page-14">
-            <img src="sb/Storyboard Ongoing_010.png">
-        </section>
-        </main>
+<head>
+  <title>Pagination Example</title>
+  <style>
+    /* Pagination Styles */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
-        <script>
-            // Audio
-            var audio = new Audio('assets/sounds/music.mp3');
-            var isPlaying = false;
+    .pagination a {
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
 
-            function toggleMusic() {
-              if (isPlaying) {
-                audio.pause();
-                isPlaying = false;
-              } else {
-                audio.play();
-                isPlaying = true;
-              }
-            }
+    .pagination a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
 
-            // Page indicator
-            var indicator = document.getElementById('page-indicator');
-            var sections = document.querySelectorAll('section');
-            var totalPages = sections.length;
+    .pagination a:hover:not(.active) {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pagination Example</h1>
+  
+  <!-- Sections -->
+  <div id="section1" class="section">
+    <h2>Section 1</h2>
+    <p>This is the content of section 1.</p>
+  </div>
 
-            // Function to update the page indicator based on scrolling
-            function updatePageIndicator() {
-              var currentPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  <!-- Add more sections here... -->
 
-              var currentPage = 0;
-              for (var i = 0; i < sections.length; i++) {
-                var section = sections[i];
-                var sectionTop = section.offsetTop;
-                var sectionHeight = section.offsetHeight;
-
-                if (currentPosition >= sectionTop && currentPosition < sectionTop + sectionHeight) {
-                  currentPage = i + 1;
-                  break;
-                }
-              }
-
-              indicator.textContent = currentPage + '/' + totalPages;
-            }
-
-            // Event listener for scroll events
-            window.addEventListener('scroll', updatePageIndicator);
-
-            // Initial update of the page indicator
-            updatePageIndicator();
-        </script>
-    </body>
+  <div id="section30" class="section">
+    <h2>Section 30</h2>
+    <p>This is the content of section 30.</p>
+  </div>
+  
+  <!-- Pagination -->
+  <div class="pagination">
+    <a href="#section1" class="active">1</a>
+    <a href="#section2">2</a>
+    <!-- Add more links for other sections -->
+    <a href="#section30">30</a>
+  </div>
+  
+  <script>
+    // Update active class on pagination links
+    const paginationLinks = document.querySelectorAll('.pagination a');
+    paginationLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        paginationLinks.forEach(link => link.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
 </html>

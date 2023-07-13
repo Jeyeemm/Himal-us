@@ -1,11 +1,11 @@
-* {
-	font-family: 'Roboto' sans-serif;
-  	list-style: none;
-  	text-decoration: none;
-}
-html {
-	scroll-behavior: smooth;
-}
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto' sans-serif;
+    list-style: none;
+    text-decoration: none;
+  }
 body {
     background-color: #343434;
     display: flex;
@@ -17,31 +17,90 @@ body {
 header {
     padding: 10px;
 }
-.navbar {
-	margin-top: 12%;
-	margin-left: 70px;
-	height: 100vh;
-	position: fixed;
-	background-color: #343434;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	overflow-x: 0;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 80px;
+  background-color: rgba(49, 49, 65, 0.5);
+  padding: .4rem .8rem;
+  transition: all 0.5s ease;
 }
-.navbar a {
-	list-style: none;
+.sidebar.active ~ .main-content {
+  left: 250px;
+  width: calc(100% - 250px);
 }
-.navbar ol li {
-	padding: 20px 0px;
+.sidebar.active {
+  width: 250px;
 }
-.music-button {
-      background-image: url('assets/icons/music.png');
-      width: 30px;
-      height: 30px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      border: none;
-      cursor: pointer;
+.sidebar #btn {
+  position: absolute;
+  color: aliceblue;
+  top: .4rem;
+  left: 50%;
+  font-size: 1.2rem;
+  line-height: 50px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.sidebar.active #btn {
+  left: 90%;
+}
+.sidebar .top .logo {
+  color: aliceblue;
+  font-family: 'Open Sans';
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+.sidebar.active .top .logo {
+  opacity: 1;
+}
+.top .logo i {
+  font-size: 2rem;
+  margin-right: 5px;
+}
+.top .logo span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.sidebar ul li {
+  position: relative;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  list-style-type: none;
+  height: 50px;
+  width: 90%;
+  margin: 0.8rem auto;
+  line-height: 50px;
+}
+.sidebar ul li a {
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+}
+.sidebar ul li a:hover {
+  background-color: aliceblue;
+  color: #001C30;
+}
+.sidebar ul li a i {
+  min-width: 50px;
+  text-align: center;
+  height: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+}
+.sidebar .nav-item {
+  opacity: 0;
+}
+.sidebar.active .nav-item {
+  opacity: 1;
 }
 .page-indicator {
       position: fixed;
@@ -61,6 +120,3 @@ header {
 		scroll-behavior: smooth;
 	}
 }
-
-img {
-	object-fit: cover;
