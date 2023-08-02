@@ -1,65 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pagination Example</title>
-  <style>
-    /* Pagination Styles */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .pagination a {
-      color: #000;
-      padding: 8px 16px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .pagination a.active {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    .pagination a:hover:not(.active) {
-      background-color: #ddd;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range Slider Example</title>
+  <link rel="stylesheet" href="test.css">
 </head>
 <body>
-  <h1>Pagination Example</h1>
-  
-  <!-- Sections -->
-  <div id="section1" class="section">
-    <h2>Section 1</h2>
-    <p>This is the content of section 1.</p>
+  <div class="range-slider">
+    <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
+    <p><span id="sliderValue">50</span></p>
   </div>
 
-  <!-- Add more sections here... -->
+  <div id="section0" class="section">Section 0</div>
+  <div id="section30" class="section">Section 30</div>
+  <div id="section60" class="section">Section 60</div>
+  <div id="section100" class="section">Section 100</div>
 
-  <div id="section30" class="section">
-    <h2>Section 30</h2>
-    <p>This is the content of section 30.</p>
-  </div>
-  
-  <!-- Pagination -->
-  <div class="pagination">
-    <a href="#section1" class="active">1</a>
-    <a href="#section2">2</a>
-    <!-- Add more links for other sections -->
-    <a href="#section30">30</a>
-  </div>
-  
   <script>
-    // Update active class on pagination links
-    const paginationLinks = document.querySelectorAll('.pagination a');
-    paginationLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        paginationLinks.forEach(link => link.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
+    const slider = document.getElementById("myRange");
+    const output = document.getElementById("sliderValue");
+
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+      const sectionId = "section" + this.value;
+      const sectionElement = document.getElementById(sectionId);
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: "smooth" });
+      }
+    };
   </script>
 </body>
 </html>
