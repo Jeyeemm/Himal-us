@@ -100,7 +100,7 @@ body {
 
 .sidebar ul li a:hover {
   background-color: aliceblue;
-  color: var(--bg-color);
+  color: var(--sec-color);
 }
 
 .sidebar ul li a i {
@@ -126,8 +126,8 @@ body {
 
 .title{
   position:absolute;
-  top: 13vh;
-  left: 130vh;
+  top: 10vh;
+  left: 110vh;
   font-size: 5px;
   font-family: 'Poppins';
   letter-spacing: 0.2em;
@@ -182,7 +182,7 @@ body {
 .collab {
   position: relative;
   z-index: -1;
-  top: 12vh;
+  top: 20vh;
   left: 20vh;
   cursor: default;
 }
@@ -190,11 +190,11 @@ body {
 .info {
   position: absolute;
   margin-right: 5vh;
-  top: 30vh;
-  left: 140vh;
+  top: 27vh;
+  left: 120vh;
   color: var(--main-color);
   font-family: 'Poppins';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.2em;
   cursor: default;
 }
@@ -207,7 +207,7 @@ body {
 .title2{
   position: relative;
   top: 12vh;
-  left: 110vh;
+  left: 95vh;
   padding-top: 10vh;
   padding-bottom: 10vh;
   font-size: 5px;
@@ -265,7 +265,7 @@ body {
   display: flex;
   flex-wrap:nowrap;
   text-align: center;
-  padding-left: 14vh;
+  padding-left: 12vh;
   padding-right: 2vh;
 }
 

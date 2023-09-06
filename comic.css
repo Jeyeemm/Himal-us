@@ -6,6 +6,14 @@
     list-style: none;
     text-decoration: none;
   }
+
+  :root {
+    --bg-color: #222831;
+    --pri-color: #393E46;
+    --sec-color: #00ADB5;
+    --main-color: #EEEEEE;
+  }
+
 body {
     background-color: #343434;
     display: flex;
@@ -14,6 +22,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 header {
     padding: 10px;
 }
@@ -114,6 +123,7 @@ header {
       font-size: 14px;
       background-color: gold;
 }
+
 @media
 (prefers-reduced-motion: no-preference) {
 	html {

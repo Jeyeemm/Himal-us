@@ -7,15 +7,22 @@
   <link rel="stylesheet" href="test.css">
 </head>
 <body>
+
+  <div class="page-indicator" id="page-indicator">1/52</div>
+
   <div class="range-slider">
     <input type="range" min="0" max="100" value="50" class="slider" id="myRange">
     <p><span id="sliderValue">50</span></p>
   </div>
 
-  <div id="section0" class="section">Section 0</div>
-  <div id="section30" class="section">Section 30</div>
-  <div id="section60" class="section">Section 60</div>
-  <div id="section100" class="section">Section 100</div>
+  <div id="section1" class="section">Section 1</div>
+  <img src="assets/pages/p1.png">
+  <div id="section2" class="section">Section 2</div>
+  <img src="assets/pages/p2.png">
+  <div id="section3" class="section">Section 3</div>
+  <img src="assets/pages/p3.png">
+  <div id="section4" class="section">Section 4</div>
+  <img src="assets/pages/p4.png">
 
   <script>
     const slider = document.getElementById("myRange");
@@ -31,6 +38,36 @@
         sectionElement.scrollIntoView({ behavior: "smooth" });
       }
     };
+
+    // Page indicator
+    var indicator = document.getElementById('page-indicator');
+            var sections = document.querySelectorAll('section');
+            var totalPages = sections.length;
+
+            // Function to update the page indicator based on scrolling
+            function updatePageIndicator() {
+              var currentPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+              var currentPage = 0;
+              for (var i = 0; i < sections.length; i++) {
+                var section = sections[i];
+                var sectionTop = section.offsetTop;
+                var sectionHeight = section.offsetHeight;
+
+                if (currentPosition >= sectionTop && currentPosition < sectionTop + sectionHeight) {
+                  currentPage = i + 1;
+                  break;
+                }
+              }
+
+              indicator.textContent = currentPage + '/' + totalPages;
+            }
+
+            // Event listener for scroll events
+            window.addEventListener('scroll', updatePageIndicator);
+
+            // Initial update of the page indicator
+            updatePageIndicator();
   </script>
 </body>
 </html>

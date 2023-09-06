@@ -5,16 +5,19 @@
   list-style: none;
   text-decoration: none;
 }
+
 :root {
-  --bg-color: #2F89FC;
-  --pri-color: #30E3CA;
-  --sec-color: #40514E;
-  --main-color: #F5F5F5;
+  --bg-color: #222831;
+  --pri-color: #393E46;
+  --sec-color: #00ADB5;
+  --main-color: #EEEEEE;
 }
+
 body {
-  background-image: url("assets/bg.png");
-  background-size: cover;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
 }
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -25,13 +28,16 @@ body {
   padding: .4rem .8rem;
   transition: all 0.5s ease;
 }
+
 .sidebar.active ~ .main-content {
   left: 250px;
   width: calc(100% - 250px);
 }
+
 .sidebar.active {
   width: 250px;
 }
+
 .sidebar #btn {
   position: absolute;
   color: aliceblue;
@@ -42,9 +48,11 @@ body {
   transform: translateX(-50%);
   cursor: pointer;
 }
+
 .sidebar.active #btn {
   left: 90%;
 }
+
 .sidebar .top .logo {
   color: aliceblue;
   font-family: 'Open Sans';
@@ -55,17 +63,21 @@ body {
   pointer-events: none;
   opacity: 0;
 }
+
 .sidebar.active .top .logo {
   opacity: 1;
 }
+
 .top .logo i {
   font-size: 2rem;
   margin-right: 5px;
 }
+
 .top .logo span {
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 .sidebar ul li {
   position: relative;
   font-family: 'Open Sans';
@@ -76,6 +88,7 @@ body {
   margin: 0.8rem auto;
   line-height: 50px;
 }
+
 .sidebar ul li a {
   color: aliceblue;
   display: flex;
@@ -83,10 +96,12 @@ body {
   text-decoration: none;
   border-radius: 0.8rem;
 }
+
 .sidebar ul li a:hover {
   background-color: aliceblue;
-  color: var(--bg-color);
+  color: var(--sec-color);
 }
+
 .sidebar ul li a i {
   min-width: 50px;
   text-align: center;
@@ -94,39 +109,45 @@ body {
   border-radius: 12px;
   line-height: 50px;
 }
+
 .sidebar .nav-item {
   opacity: 0;
 }
+
 .sidebar.active .nav-item {
   opacity: 1;
 }
+
 .title {
   position: absolute;
   bottom: 30vh;
-  left: 17vh;
-  color: var(--main-color);
+  left: 20vh;
+  color: var(--sec-color);
   font-family: 'Poppins';
   font-size: 40px;
   letter-spacing: 0.2em;
   cursor: default;
 }
+
 .slogan {
   position: absolute;
   bottom: 20vh;
-  left: 12vh;
+  left: 25vh;
   color: var(--main-color);
   font-family: 'Poppins';
   font-size: 40px;
   letter-spacing: 0.2em;
   cursor: default;
 }
+
 .readButton {
   position: absolute;
   bottom: 10vh;
-  left: 40vh;
+  left: 35vh;
 }
+
 .btn {
-  border: 1px solid var(--pri-color);
+  border: 1px solid var(--sec-color);
   background: none;
   padding: 10px 20px;
   font-size: 20px;
@@ -136,26 +157,37 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .read {
-  color: var(--pri-color);
-}
-.read:hover {
   color: var(--sec-color);
 }
+
+.read:hover {
+  color: var(--main-color);
+}
+
 .btn::before {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
   height: 0%;
-  background: var(--pri-color);
+  background: var(--sec-color);
   z-index: -1;
   transition: 0.8s;
 }
+
 .read::before {
   top: 0;
   border-radius: 0 0 50% 50%;
 }
+
 .read:hover::before {
   height: 180%;
+}
+
+.waves {
+  position: relative;
+  z-index: -1;
+  left: 18vh;
 }
