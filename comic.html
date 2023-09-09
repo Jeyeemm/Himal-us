@@ -52,80 +52,196 @@
         </div>
       </div>
 
-      <div class="page-indicator" id="page-indicator">1/52</div>
+      <!-- Slider for section navigation -->
 
-            <!-- Page sections here -->
+    <div id="slider-container">
+        <input type="range" id="slider" min="1" max="16" step="1" value="1">
+    </div>
 
-            <section id="page-1">
-              <img src="assets/pages/a.png">
-          </section>
-          <section id="page-2">
-              <img src="assets/pages/b.png">
-          </section >
-          <section id="page-3">
-              <img src="assets/pages/c.png">
-          </section>
-        <section id="page-4">
-            <img src="assets/pages/p1.png">
-        </section>
-        <section id="page-5">
-            <img src="assets/pages/p2.png">
-        </section >
-        <section id="page-6">
-            <img src="assets/pages/p3.png">
-        </section>
-        <section id="page-7">
-            <img src="assets/pages/p4.png">
-        </section>
-        <section id="page-8">
-            <img src="assets/pages/p5.png">
-        </section>
-        <section id="page-9">
-            <img src="sassets/pages/p6.png">
-        </section>
-        <section id="page-10">
-            <img src="assets/pages/p7.png">
-        </section>
-        <section id="page-11">
-            <img src="assets/pages/p8.png">
-        </section>
-        <section id="page-12">
-            <img src="assets/pages/p9.png">
-        </section >
-        <section id="page-13">
-            <img src="assets/pages/p10.png">
-        </section>
-        <section id="page-14">
-            <img src="assets/pages/p11.png">
-        </section>
-        <section id="page-15">
-            <img src="assets/pages/p12.png">
-        </section>
-        <section id="page-16">
-            <img src="assets/pages/p13.png">
-        </section>
-        <section id="page-17">
-            <img src="assets/pages/p14.png">
-        </section>
+    <section id="section1">
+        <img src="assets/pages/a.png">
+    </section>
+
+    <section id="section2">
+      <img src="assets/pages/b.png">
+    </section>
+
+    <section id="section3">
+      <img src="assets/pages/c.png">
+    </section>
+
+    <section id="section4">
+      <img src="assets/pages/p1.png">
+    </section>
+
+    <section id="section5">
+      <img src="assets/pages/p2.png">
+    </section>
+
+    <section id="section6">
+    <img src="assets/pages/p3.gif">
+    </section>
+
+    <section id="section7">
+    <img src="assets/pages/p4.png">
+    </section>
+
+    <section id="section8">
+    <img src="assets/pages/p5.png">
+    </section>
+
+    <section id="section9">
+        <img src="assets/pages/p6.png">
+    </section>
+
+    <section id="section10">
+      <img src="assets/pages/p7.png">
+    </section>
+
+    <section id="section11">
+      <img src="assets/pages/p8.png">
+    </section>
+
+    <section id="section12">
+      <img src="assets/pages/p9.png">
+    </section>
+
+    <section id="section13">
+      <img src="assets/pages/p10.png">
+    </section>
+
+    <section id="section14">
+    <img src="assets/pages/p11.png">
+    </section>
+
+    <section id="section15">
+    <img src="assets/pages/p12.png">
+    </section>
+
+    <section id="section16">
+    <img src="assets/pages/p13.png">
+    </section>
+
+    <section id="section17">
+      <img src="assets/pages/p14.png">
+    </section>
+
+    <!-- Page Indicator -->
+
+    <div id="page-indicator">Page <span id="page-number">1</span> of 17</div>
+
+    <!-- Audio Elements for Section Sounds -->
+
+    <audio id="sound1">
+        <source src="assets/sounds/s1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound2">
+        <source src="assets/sounds/s2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound3">
+        <source src="assets/sounds/s3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound4">
+        <source src="assets/sounds/s4.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound5">
+        <source src="assets/sounds/s5.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound6">
+        <source src="sound3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound7">
+        <source src="s1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound8">
+        <source src="s2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound9">
+        <source src="sound3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound10">
+        <source src="s1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound11">
+        <source src="s2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound12">
+        <source src="sound3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound13">
+        <source src="s1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound14">
+        <source src="s2.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound15">
+        <source src="sound3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound16">
+        <source src="s1.mp3" type="audio/mpeg">
+    </audio>
        
-
         </main>
 
         <script>
 
-            // Audio
-            var audio = new Audio('assets/sounds/music.mp3');
-            var isPlaying = false;
+const slider = document.getElementById('slider');
+        const sections = document.querySelectorAll('section');
+        const pageIndicator = document.getElementById('page-number');
 
-            function toggleMusic() {
-              if (isPlaying) {
-                audio.pause();
-                isPlaying = false;
-              } else {
-                audio.play();
-                isPlaying = true;
-              }
+        // Create an array of audio elements for all sections
+const sectionSounds = [
+    document.getElementById('sound1'),
+    document.getElementById('sound2'),
+    document.getElementById('sound3'),
+    document.getElementById('sound4'),
+    document.getElementById('sound5'),
+    document.getElementById('sound6'),
+    document.getElementById('sound7'),
+    document.getElementById('sound8'),
+    document.getElementById('sound9'),
+    document.getElementById('sound10'),
+    document.getElementById('sound11'),
+    document.getElementById('sound12'),
+    document.getElementById('sound13'),
+    document.getElementById('sound14'),
+    document.getElementById('sound15'),
+    document.getElementById('sound16')
+];
+
+
+        let currentlyInView = 1; // Initialize the currently in view section to 1
+
+        // Function to update the slider and page indicator when scrolling to a new section
+        const updateSlider = () => {
+          sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top <= window.innerHeight) {
+            currentlyInView = index; // Subtract 1 to match the index
+            // Play the sound associated with the current section
+            sectionSounds[currentlyInView].currentTime = 0; // Reset sound to the beginning
+            sectionSounds[currentlyInView].play();
+           }
+          });
+        slider.value = currentlyInView + 1; // Add 1 to match the page number
+    pageIndicator.textContent = currentlyInView + 1; // Add 1 to match the page number
+};
+
+        // Attach a scroll event listener to update the slider and page indicator
+        window.addEventListener('scroll', updateSlider);
+
+        // Update the slider and page indicator initially
+        updateSlider();
+
+        // Update the section when the slider value changes
+        slider.addEventListener('input', () => {
+            const sectionNumber = parseInt(slider.value);
+            const sectionId = `section${sectionNumber}`;
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
             }
+        });
 
             //Sidebar
             let btn = document.querySelector('#btn')
@@ -134,35 +250,6 @@
             sidebar.classList.toggle('active')
              };
 
-            // Page indicator
-            var indicator = document.getElementById('page-indicator');
-            var sections = document.querySelectorAll('section');
-            var totalPages = sections.length;
-
-            // Function to update the page indicator based on scrolling
-            function updatePageIndicator() {
-              var currentPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-              var currentPage = 0;
-              for (var i = 0; i < sections.length; i++) {
-                var section = sections[i];
-                var sectionTop = section.offsetTop;
-                var sectionHeight = section.offsetHeight;
-
-                if (currentPosition >= sectionTop && currentPosition < sectionTop + sectionHeight) {
-                  currentPage = i + 1;
-                  break;
-                }
-              }
-
-              indicator.textContent = currentPage + '/' + totalPages;
-            }
-
-            // Event listener for scroll events
-            window.addEventListener('scroll', updatePageIndicator);
-
-            // Initial update of the page indicator
-            updatePageIndicator();
         </script>
     </body>
 </html>
