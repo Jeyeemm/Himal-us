@@ -36,102 +36,83 @@ img {
   height: auto;
 }
 
-.sidebar {
-position: fixed;
-top: 0;
-left: 0;
-height: 100vh;
-width: 80px;
-background-color: rgba(49, 49, 65, 0.5);
-padding: .4rem .8rem;
-transition: all 0.5s ease;
+#menuIcon {
+  position: fixed;
+  top: 40px;
+  right: 60px;
+  cursor: pointer;
+  z-index: 999;
 }
-.sidebar.active ~ .main-content {
-left: 250px;
-width: calc(100% - 250px);
+
+.menuBox {
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom-left-radius: 100%;
+  transition: width 0.5s, height 0.5s, border-radius 0.5s;
 }
-.sidebar.active {
-width: 250px;
+
+.menuBox.openMenu {
+  width: 100%;
+  height: 100vh;
+  border-bottom-left-radius: 0;
 }
-.sidebar #btn {
-position: absolute;
-color: aliceblue;
-top: .4rem;
-left: 50%;
-font-size: 1.2rem;
-line-height: 50px;
-transform: translateX(-50%);
-cursor: pointer;
+
+.menuBox.openMenu ul li {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 1s, opacity 1s;
+  transition-delay: 0.5s;
 }
-.sidebar.active #btn {
-left: 90%;
+
+.menuBox ul li {
+  list-style: none;
+  margin: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
 }
-.sidebar .top .logo {
-color: aliceblue;
-font-family: 'Open Sans';
-display: flex;
-height: 50px;
-width: 100%;
-align-items: center;
-pointer-events: none;
-opacity: 0;
+
+.menuBox ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--main-color);
+  font-family: 'Roboto';
+  font-size: 50px;
+  font-weight: 600;
+  position: relative;
+  text-shadow: 0 0 0 var(--sec-color);
+  transition: text-shadow 0.5s, transform 0.5s;
 }
-.sidebar.active .top .logo {
-opacity: 1;
+
+.menuBox ul li a:hover {
+  text-shadow: -3px 3px 0 var(--sec-color);
+  transform: translateY(-6px);
 }
-.top .logo i {
-font-size: 2rem;
-margin-right: 5px;
+
+.menuBox ul li a::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--main-color);
+  position: absolute;
+  bottom: 19px;
+  right: -18px;
+  opacity: 0;
+  box-shadow: 0 0 0 var(--sec-color);
+  transition: box-shadow 0.5s;
 }
-.top .logo span {
-font-size: 1.5rem;
-font-weight: bold;
-}
-.sidebar ul li {
-position: relative;
-font-family: 'Open Sans';
-font-weight: bold;
-list-style-type: none;
-height: 50px;
-width: 90%;
-margin: 0.8rem auto;
-line-height: 50px;
-}
-.sidebar ul li a {
-color: aliceblue;
-display: flex;
-align-items: center;
-text-decoration: none;
-border-radius: 0.8rem;
-}
-.sidebar ul li a:hover {
-background-color: aliceblue;
-color: var(--sec-color);
-}
-.sidebar ul li a i {
-min-width: 50px;
-text-align: center;
-height: 50px;
-border-radius: 12px;
-line-height: 50px;
-}
-.sidebar .nav-item {
-opacity: 0;
-}
-.sidebar.active .nav-item {
-opacity: 1;
-}
-.page-indicator {
-    position: fixed;
-    top: 10px;
-    right: 10%;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-color: gold;
-    border-radius: 5px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    background-color: gold;
+.menuBox ul li a:hover::after {
+  opacity: 1;
+  box-shadow: -2px 2px 0 var(--sec-color);
 }
 
 #slider-container {
@@ -140,7 +121,7 @@ opacity: 1;
   left: 0;
   width: 100%;
   padding: 10px;
-  z-index: 999; /* Ensure the slider is above other content */
+  z-index: 1; /* Ensure the slider is above other content */
   text-align: center; /* Center the slider horizontally */
 }
 
@@ -159,34 +140,7 @@ opacity: 1;
   color: #fff;
   padding: 5px 10px;
   border-radius: 20px;
-}
-
-@media (max-width: 768px) {
-  /* Adjustments for screens up to 768px wide (typical for mobile devices) */
-
-  body {
-    justify-content: flex-start; /* Align content to the top */
-  }
-
-  .sidebar {
-    width: 100%; /* Expand the sidebar to the full width */
-  }
-
-  .sidebar.active {
-    width: 80%; /* Shrink the sidebar when it's active */
-  }
-
-  .sidebar #btn {
-    left: 10px; /* Adjust the button position */
-  }
-
-  .sidebar ul li {
-    width: 100%; /* Make list items full width */
-  }
-
-  .page-indicator {
-    bottom: 10px; /* Adjust the position */
-  }
+  z-index: 1;
 }
 
 @media

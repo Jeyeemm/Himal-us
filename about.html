@@ -20,36 +20,16 @@
 		<header>
 
 			<!--Navbar-->
-			<div class="sidebar">
-				<div class="top">
-				  <div class="logo">
-					<i class="fa-solid fa-eye"></i> 
-					<span>Himal-us</span>
-				  </div>
-				  <i class="fa-solid fa-bars" id="btn"></i>
-				</div>
-				  <ul>
-					<li> 
-					  <a href="index.html">
-						<i class="fa-solid fa-house"></i>
-						<span class="nav-item">Home</span>
-					  </a>
-					</li>
-					<li> 
-					  <a href="comic.html">
-						<i class="fa-solid fa-book"></i>
-						<span class="nav-item">Read</span>
-					  </a>
-					</li>
-					<li> 
-					  <a href="about.html">
-						<i class="fa-solid fa-address-card"></i>
-						<span class="nav-item">About</span>
-					  </a>
-					</li>
-				  </ul>
-				</div>
-			  </div>
+			
+			<img src="assets/icons/open.png" id="menuIcon">
+
+			<div class="menuBox" id="menuBox">
+			  <ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="comic.html">Comics</a></li>
+				<li><a href="about.html">About</a></li>
+			  </ul>
+			</div>
 
 		</header>
 
@@ -171,11 +151,20 @@
 	</body>
 
 	<script>
-		let btn = document.querySelector('#btn')
-		let sidebar = document.querySelector('.sidebar')
-		btn.onclick = function () {
-		  sidebar.classList.toggle('active')
-		};
+		
+		//menu script
+		let menuBox = document.getElementById("menuBox");
+          let menuIcon = document.getElementById("menuIcon");
+
+          menuIcon.onclick = function() {
+            menuBox.classList.toggle("openMenu");
+
+            if(menuBox.classList.contains("openMenu")) {
+              menuIcon.src = "assets/icons/close.png";
+            }
+            else menuIcon.src = "assets/icons/open.png";
+          }
+		  
 	  </script>
 	  
 </html>
