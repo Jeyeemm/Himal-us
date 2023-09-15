@@ -23,7 +23,8 @@ body {
   top: 40px;
   right: 60px;
   cursor: pointer;
-  z-index: 999;
+  z-index: 2;
+  animation: slideLeft 1s ease forwards;
 }
 
 .menuBox {
@@ -39,6 +40,7 @@ body {
   overflow: hidden;
   border-bottom-left-radius: 100%;
   transition: width 0.5s, height 0.5s, border-radius 0.5s;
+  z-index: 1;
 }
 
 .menuBox.openMenu {
@@ -105,7 +107,7 @@ body {
   font-size: 40px;
   letter-spacing: 0.2em;
   cursor: default;
-  z-index: -1;
+  animation: slideUp 1s ease forwards;
 }
 
 .slogan {
@@ -116,12 +118,13 @@ body {
   font-size: 40px;
   letter-spacing: 0.2em;
   cursor: default;
-  z-index: -1;
+  animation: slideUp 1s ease forwards;
 }
 
 .readButton {
   text-align: center;
   margin-top: 5vh;
+  animation: slideUp 1s ease forwards;
 }
 
 .btn {
@@ -134,7 +137,6 @@ body {
   transition: 0.8s;
   position: relative;
   overflow: hidden;
-  z-index: -1;
 }
 
 .read {
@@ -200,17 +202,41 @@ body {
   animation-duration: 20s;
 }
 
+/*Animation*/
+
 @keyframes move-forever {
   0% {
     transform: translate3d(-90px, 0, 0);
   }
-
   100% {
     transform: translate3d(85px, 0, 0);
   }
 }
 
-/* /* Shrinking for mobile */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries*/
+
 @media (max-width: 768px)
   .waves {
     height: 80px;
