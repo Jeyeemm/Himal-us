@@ -7,24 +7,186 @@
 }
 
 :root {
-  --bg-color: #222831;
-  --pri-color: #393E46;
-  --sec-color: #00ADB5;
-  --main-color: #EEEEEE;
+  --text: #fef9ec;
+  --background: #070303;
+  --primary: #1684A7;
+  --secondary: #7CBD1E;
+  --accent: #F1F864;
 }
 
 body {
-  background-color: var(--bg-color);
-  overflow: hidden;
+  font-family: 'Poppins';
+  font-weight: 400;
+  overflow-x: hidden;
 }
 
-#menuIcon {
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/*Button*/
+
+#read {
+  padding: 0.8em 1.8em;
+  border: 2px solid var(--secondary);
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: var(--background);
+  border-radius: 50px;
   position: fixed;
-  top: 40px;
-  right: 60px;
+  left: 10vh;
+  top: 5vh;
   cursor: pointer;
-  z-index: 2;
-  animation: slideLeft 1s ease forwards;
+  animation-name: slideRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+#read::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--secondary);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ #read:hover::before {
+  width: 105%;
+ }
+ 
+ #read:hover {
+  color: var(--background)
+ }
+
+#watch {
+  padding: 0.8em 1.8em;
+  border: 2px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: var(--text);
+  border-radius: 50px;
+  cursor: pointer;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+ }
+ 
+ #watch::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--secondary);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ #watch:hover::before {
+  width: 105%;
+ }
+ 
+ #watch:hover {
+  color: var(--background)
+ }
+ 
+
+/*Menu*/
+#menuIcon {
+  cursor: pointer;
+  z-index: 3;
+  position: fixed;
+  right: 10vh;
+  top: 5vh;
+  animation-name: slideLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.menu {
+  --s: 35px; /* control the size */
+  --c: var(--secondary); /* the color */
+  
+  height: var(--s);
+  aspect-ratio: 1;
+  border: none;
+  padding: 0;
+  border-inline: calc(var(--s)/2) solid #0000; 
+  box-sizing: content-box;
+  --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0) 
+         no-repeat content-box border-box;
+  --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) 
+         repeat-y content-box border-box;
+  background: 
+    var(--_g2) left  var(--_p,0px) top,
+    var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+    var(--_g2) right var(--_p,0px) top,
+    var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+  background-size: 
+    20% 80%,
+    40% 100%;
+  position: relative;
+  clip-path: inset(0 25%);
+  -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
+  cursor: pointer;
+  transition: 
+    background-position .3s var(--_s,.3s), 
+    clip-path 0s var(--_s,.6s);
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+}
+.menu:before,
+.menu:after {
+  content:"";
+  position: absolute;
+  border-radius: var(--s);
+  inset: 40% 0;
+  background: var(--c);
+  transition: transform .3s calc(.3s - var(--_s,.3s));
+}
+
+.menu:checked {
+  clip-path: inset(0);
+  --_p: calc(-1*var(--s));
+  --_s: 0s;
+}
+.menu:checked:before {
+  transform: rotate(45deg);
+}
+.menu:checked:after {
+  transform: rotate(-45deg);
+}
+.menu:focus-visible {
+  clip-path: none;
+  -webkit-mask: none;
+  border: none;
+  outline: 2px solid var(--c);
+  outline-offset: 5px;
 }
 
 .menuBox {
@@ -40,7 +202,7 @@ body {
   overflow: hidden;
   border-bottom-left-radius: 100%;
   transition: width 0.5s, height 0.5s, border-radius 0.5s;
-  z-index: 1;
+  z-index: 2;
 }
 
 .menuBox.openMenu {
@@ -67,17 +229,17 @@ body {
 .menuBox ul li a {
   display: inline-block;
   text-decoration: none;
-  color: var(--main-color);
+  color: var(--text);
   font-family: 'Roboto';
   font-size: 50px;
   font-weight: 600;
   position: relative;
-  text-shadow: 0 0 0 var(--sec-color);
+  text-shadow: 0 0 0 var(--background);
   transition: text-shadow 0.5s, transform 0.5s;
 }
 
 .menuBox ul li a:hover {
-  text-shadow: -3px 3px 0 var(--sec-color);
+  text-shadow: -3px 3px 0 var(--secondary);
   transform: translateY(-6px);
 }
 
@@ -86,136 +248,291 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--main-color);
+  background: var(--text);
   position: absolute;
   bottom: 19px;
   right: -18px;
   opacity: 0;
-  box-shadow: 0 0 0 var(--sec-color);
+  box-shadow: 0 0 0 var(--background);
   transition: box-shadow 0.5s;
 }
 .menuBox ul li a:hover::after {
   opacity: 1;
-  box-shadow: -2px 2px 0 var(--sec-color);
+  box-shadow: -2px 2px 0 var(--secondary);
+}
+
+/*Sections*/
+#hero {
+  width: 100%; 
+  height: 100vh;
+  background-image: url(assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 15vh;
 }
 
 .title {
-  text-align: center;
-  margin-top: 25vh;
-  color: var(--sec-color);
-  font-family: 'Poppins';
-  font-size: 40px;
-  letter-spacing: 0.2em;
-  cursor: default;
-  animation: slideUp 1s ease forwards;
+  width: 100%;
+  height: 100%;
+  animation-name: slideDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 
-.slogan {
-  text-align: center;
-  margin-top: 5vh;
-  color: var(--main-color);
-  font-family: 'Poppins';
-  font-size: 40px;
-  letter-spacing: 0.2em;
-  cursor: default;
-  animation: slideUp 1s ease forwards;
+#title {
+  margin: auto;
 }
 
-.readButton {
-  text-align: center;
-  margin-top: 5vh;
-  animation: slideUp 1s ease forwards;
+.tagline {
+  color: var(--text); 
+  font-size: 50px; 
+  text-transform: uppercase; 
+  word-wrap: break-word;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 
-.btn {
-  border: 1px solid var(--sec-color);
-  background: none;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-family: 'Poppins';
-  cursor: pointer;
-  transition: 0.8s;
+.info {
+  width: 511px; 
+  text-align: center; 
+  color: var(--text); 
+  font-size: 16px; 
+  text-transform: uppercase; 
+  word-wrap: break-word;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+#about {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--text);
+}
+
+.about-container {
   position: relative;
-  overflow: hidden;
 }
 
-.read {
-  color: var(--sec-color);
-}
-
-.read:hover {
-  color: var(--main-color);
-}
-
-.btn::before {
-  content: "";
+.about-text {
   position: absolute;
-  left: 0;
+  padding-top: 5vh;
+  right: 10vh;
+  color: var(--background); 
+  font-size: 50px; 
+  text-transform: uppercase; 
+  word-wrap: break-word;
+}
+
+.about-info {
+  position: absolute;
+  top: 25vh;
+  right: 20vh;
+  font-size: 20px;
+  height: 100px;
+  width: 300px;
+}
+
+.comic-img {
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+  width: 50%;
+  height: 50%;
+}
+
+#team {
   width: 100%;
-  height: 0%;
-  background: var(--sec-color);
-  z-index: -1;
-  transition: 0.8s;
+  height: 100vh;
+  background-color: var(--primary);
 }
 
-.read::before {
-  top: 0;
-  border-radius: 0 0 50% 50%;
+.team-text {
+  text-align: center;
+  padding-top: 5vh;
+  color: var(--text); 
+  font-size: 50px; 
+  text-transform: uppercase; 
+  word-wrap: break-word;
 }
 
-.read:hover::before {
-  height: 180%;
+.team-container {
+  display: flex;
+  flex-wrap:wrap;
+  text-align: center;
+  justify-content: center;
+  gap: 10vh;
 }
 
-.waves {
-  position: fixed;
-  bottom: 0;
+.column {
+  width: 20%;
+  padding: 0.5em 0;
+  padding-top: 12vh;
+}
+
+.team-container h1 {
   width: 100%;
-  height: 15vh;
-  /*Fix for safari gap*/
-  min-height: 100px;
-  max-height: 150px;
-  z-index: -1;
+  text-align: center;
+  font-size: 30px;
+  color: var(--secondary);
 }
 
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+.card {
+  box-shadow: 0 0 2.2em rgba( 25, 0, 58, 0.15);
+  padding: 3.5em 1em;
+  border-radius: 0.6em;
+  color: var(--text);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
+.card .img-container {
+  width: 8em;
+  height: 8em;
+  background-color: var(--accent);
+  padding: 0.5em;
+  border-radius: 50%;
+  margin: 0 auto 2em auto;
 }
 
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
+.card img {
+  width: 100%;
+  border-radius: 50%;
 }
 
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
+.card h3 {
+  font-weight: 500;
+  font-family: 'Poppins';
 }
 
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
+.card p {
+  font-weight: 300;
+  font-family: 'Poppins';
+  text-transform: uppercase;
+  margin: 0.5em 0 2em 0;
+  letter-spacing: 2px;
+}
+
+.icons {
+  width: 50%;
+  min-width: 180px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.4em;
+}
+
+.card:hover {
+  background: linear-gradient(#ffffe475, #ffffe4);
+  color: var(--background);
+}
+
+.card:hover .img-container {
+  transform: scale(1.15);
+}
+
+#mission {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--accent);
+}
+
+.mission-container {
+  position: relative;
+}
+
+.mission-text {
+  position: absolute;
+  padding-top: 5vh;
+  left: 10vh;
+  color: var(--background); 
+  font-size: 50px; 
+  text-transform: uppercase; 
+  word-wrap: break-word;
+}
+
+.mission-info {
+  position: absolute;
+  top: 30vh;
+  left: 20vh;
+  font-size: 20px;
+  height: 100px;
+  width: 300px;
+}
+
+.mission-img {
+  position: absolute;
+  top: 5vh;
+  right: 10vh;
+  width: 45%;
+  height: 45%;
+}
+
+footer {
+  text-align: center;
+  background-color: #7CBD1E;
 }
 
 /*Animation*/
 
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.column:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.column:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.column:nth-child(4) {
+  transition-delay: 600ms;
+}
+
+@media(prefers-reduced-motion) {
+  .hidden {
+    transition: none;
   }
 }
 
 @keyframes slideLeft {
   0% {
     transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
     opacity: 0;
   }
   100% {
@@ -235,10 +552,268 @@ body {
   }
 }
 
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* Media Queries*/
 
-@media (max-width: 768px)
-  .waves {
-    height: 80px;
-    min-height: 80px;
+/* laptop */
+@media (max-width: 1024px) {
+  /* hero */
+  #title {
+    width: 60%;
   }
+  .tagline {
+    font-size: 35px;
+  }
+  .info {
+    font-size: 12px;
+  }
+
+  /* about */
+  .about-text {
+    font-size: 35px;
+  }
+  .about-info {
+    position: absolute;
+    right: 10vh;
+    font-size: 18px;
+  }
+  .comic-img {
+    top: 15vh;
+  }
+  #comic {
+    width: 80%;
+  }
+
+  /* team */
+  .team-container {
+    gap: 5vh;
+  }
+  .team-text {
+    font-size: 35px;
+  }
+  .column {
+    width: 20%;
+  }
+}
+
+  /* mission */
+  .mission-text {
+    font-size: 35px;
+  }
+  .mission-info {
+    font-size: 18px;
+  }
+  .mission-img {
+    top: 25vh;
+  }
+  #mission-img {
+   width: 80%;
+  }
+
+/* tablet */
+@media (max-width: 768px) {
+  /* about */
+  #line {
+    display: none;
+  }
+
+  /* team */
+  .column {
+    width: 35%;
+    padding-top: 5vh;
+    padding: 0;
+  }
+  .card {
+    padding: 20px;
+  }
+  .team-container h1 {
+    width: 80%;
+    font-size: 20px;
+  }
+  
+  .card .img-container {
+    width: 6em;
+    height: 6em;
+    background-color: var(--accent);
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 1em auto;
+  }
+
+  /* mission */
+  .mission-info {
+    font-size: 18px;
+    left: 5vh;
+  }
+  .mission-img {
+    top: 25vh;
+    right: 5vh;
+  }
+  #mission-img {
+   width: 80%;
+  }
+}
+
+/* mobile l */
+@media (max-width: 431px) {
+  /*header*/
+  #read {
+    padding: 0.4em 1em;
+    border: 2px solid var(--secondary);
+    font-size: 14px;
+    border-radius: 50px;
+  }
+  .menu {
+    --s: 25px;
+  }
+
+  /*hero*/
+  #title {
+    margin-top: 10vh;
+    width: 80%;
+  }
+  .tagline {
+    font-size: 25px;
+  }
+  .info {
+    width: 50%;
+    font-size: 8px;
+  }
+  #watch {
+    padding: 0.8em 1.4em;
+    font-size: 12px;
+    border-radius: 25px;
+  }
+
+  /*about*/
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 30vh;
+  }
+  .about-text {
+    width: 65%;
+    font-size: 20px;
+    margin-top: 10vh;
+  }
+  .about-info {
+    width: 65%;
+    font-size: 14px;
+    margin-top: 30vh;
+  }
+  .comic-img {
+    left: 15vh;
+  }
+  #comic {
+    width: 100%;
+  }
+
+  /*team*/
+  .team-text {
+    font-size: 20px;
+    padding-bottom: 5vh;
+  }
+  .column {
+    width: 30%;
+  }
+  .card {
+    padding: 10px;
+  }
+  .team-container h1 {
+    width: 60%;
+    font-size: 18px;
+  }
+  .card .img-container {
+    width: 4em;
+    height: 4em;
+    background-color: var(--accent);
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 1em auto;
+  }
+  .card h3 {
+    font-size: 18px;
+  }
+  .card p {
+    font-size: 14px;
+  }
+  .icons {
+    min-width: 90px;
+  }
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2em;
+  }
+
+  /*mission*/
+  .mission-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 30vh;
+  }
+  .mission-text {
+    width: 65%;
+    font-size: 20px;
+    margin-top: 10vh;
+  }
+  .mission-info {
+    width: 80%;
+    font-size: 14px;
+  }
+  .mission-img {
+    top: 60vh;
+    left: 15vh;
+  }
+}
+
+/* mobile m */
+@media (max-width: 376px) {
+  /*hero*/
+  #title {
+    margin-top: 10vh;
+  }
+  .tagline {
+    font-size: 20px;
+  }
+  .info {
+    font-size: 8px;
+  }
+
+   /*about*/
+  .about-text {
+    width: 60%;
+    font-size: 18px;
+  }
+  .about-info {
+    width: 60%;
+    font-size: 12px;
+  }
+
+  /*team*/
+  .team-text {
+    font-size: 18px;
+  }
+
+  /*mission*/
+  .mission-text {
+    font-size: 18px;
+  }
+  .mission-info {
+    font-size: 12px;
+  }
+}

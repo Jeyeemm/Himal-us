@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2f24afeea0.js" crossorigin="anonymous"></script>
+    <script defer src="app.js"></script>
   
   </head>
 
@@ -23,13 +24,15 @@
 
     <header>
 
-      <img src="assets/icons/open.png" id="menuIcon">
+        <a href="comic.html"> <button id="read"> Read Now  </button> </a>
+
+        <input type="checkbox" role="button" class="menu" id="menuIcon">
 
         <div class="menuBox" id="menuBox">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="comic.html">Comics</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">Assets</a></li>
           </ul>
         </div>
 
@@ -37,59 +40,160 @@
 
     <main>
 
-        <div class="container">
-          <div class="title"><h1>Himal-us</h1></div>
-          <div class="slogan"><p></p>"The Legend"</p></div>
+      <audio src="/assets/sounds/music.mp3" autoplay></audio>
 
-          <div class="readButton">
-            <a href="comic.html">
-            <button class="btn read">Read Now</button></a>
+      <section id="hero">
+
+        <div class="hero-container">
+          <div class="title hidden">
+            <img src="assets/title.png" id="title">
+          </div>
+          <div class="tagline hidden">
+            <h1>Forgotten Past</h1>
+          </div>
+          <div class="info hidden">
+            <h2>Embark on a visual adventure like no other!</h2>
+          </div>
+          <button class="hidden" id="watch">Watch Trailer</button>
+        </div>
+
+      </section>
+
+      <section id="about">
+
+        <div class="about-container">
+          <div class="about-text hidden">
+            <h1>About the comics</h1>
+          </div>
+          <div class="about-info hidden">
+            <p>Lorem ipsum dolor sit amet. Qui ipsam voluptatibus ut tenetur deserunt nam facilis autem! Et labore quis qui nobis nihil non quod commodi sit internos quod. Et ipsa adipisci est similique perspiciatis At galisum delectus a sapiente distinctio aut laudantium iste non ipsam atque vel tenetur temporibus. Est assumenda aliquam quo rerum dolores nam eligendi accusantium qui minima ipsa.</p>
+          </div>
+          <div class="comic-img hidden">
+            <img src="assets/island.svg" id="comic">
           </div>
         </div>
 
-        <div>
-          <svg
-            class="waves"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 28"
-            preserveAspectRatio="none"
-            shape-rendering="auto"
-          >
-            <defs>
-              <path
-                id="gentle-wave"
-                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-              />
-            </defs>
-            <g class="parallax">
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="0"
-                fill="rgba(0, 173, 181, 0.7)""
-              />
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="3"
-                fill="rgba(0, 173, 181, 0.5)"
-              />
-              <use
-                xlink:href="#gentle-wave"
-                x="48"
-                y="5"
-                fill="rgba(0, 173, 181, 0.3)"
-              />
-              <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(0, 173, 181, 1)" />
-            </g>
-          </svg>
+      </section>
+
+      <section id="team">
+
+        <div class="team-text hidden">
+          <h1>Meet the Team</h1>
         </div>
-        <!--Waves end-->
-      </div>
+        
+        <div class="team-container hidden">
+          
+					<!--Column 1-->
+					<div class="column hidden">
+						<div class="card">
+							<div class="img-container">
+								<img src="assets/pics/p1.png">
+							</div>
+							<h3>Christ Mae Diaz</h3>
+							<p>Script Writer</p>
+							<div class="icons">
+								<a href="#">
+									<i class="fa-brands fa-facebook"></i>
+								</a>
+								<a href="#">
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+								<a href="#">
+									<i class="fa-brands fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!--Column 2-->
+					<div class="column hidden">
+						<div class="card">
+							<div class="img-container">
+								<img src="assets/pics/p2.png">
+							</div>
+							<h3>Erjohn Fernandez</h3>
+							<p>Comic Artist</p>
+							<div class="icons">
+								<a href="#">
+									<i class="fa-brands fa-facebook"></i>
+								</a>
+								<a href="#">
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+								<a href="#">
+									<i class="fa-brands fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!--Column 3-->
+					<div class="column hidden">
+						<div class="card">
+							<div class="img-container">
+								<img src="assets/pics/p3.png">
+							</div>
+							<h3>JM Delgado</h3>
+							<p>Web Developer</p>
+							<div class="icons">
+								<a href="#">
+									<i class="fa-brands fa-facebook"></i>
+								</a>
+								<a href="#">
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+								<a href="#">
+									<i class="fa-brands fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<!--Column 4-->
+					<div class="column hidden">
+						<div class="card">
+							<div class="img-container">
+								<img src="assets/pics/p4.png">
+							</div>
+							<h3>Veronica Lumahan</h3>
+							<p>Layout Artist</p>
+							<div class="icons">
+								<a href="#">
+									<i class="fa-brands fa-facebook"></i>
+								</a>
+								<a href="#">
+									<i class="fa-brands fa-instagram"></i>
+								</a>
+								<a href="#">
+									<i class="fa-brands fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+      </section>
+
+      <section id="mission">
+
+        <div class="mission-container">
+          <div class="mission-text hidden">
+            <h1>Our Mission</h1>
+          </div>
+          <div class="mission-info hidden">
+            <p>Lorem ipsum dolor sit amet. Qui ipsam voluptatibus ut tenetur deserunt nam facilis autem! Et labore quis qui nobis nihil non quod commodi sit internos quod. Et ipsa adipisci est similique perspiciatis At galisum delectus a sapiente distinctio aut laudantium iste non ipsam atque vel tenetur temporibus. Est assumenda aliquam quo rerum dolores nam eligendi accusantium qui minima ipsa.</p>
+          </div> 
+          <div class="mission-img hidden">
+            <img src="assets/mission.svg" id="mission-img">
+          </div>
+        </div>
+      </section>
 
     </main>
 
+    <footer>
+      <p>© 2023 EMC Group 4</p>
+    </footer>
+    
   </body>
 
   <script>
@@ -100,11 +204,6 @@
 
           menuIcon.onclick = function() {
             menuBox.classList.toggle("openMenu");
-
-            if(menuBox.classList.contains("openMenu")) {
-              menuIcon.src = "assets/icons/close.png";
-            }
-            else menuIcon.src = "assets/icons/open.png";
           }
 
   </script>
