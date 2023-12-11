@@ -9,18 +9,17 @@
 :root {
   --text: #fef9ec;
   --background: #070303;
-  --primary: #1684A7;
-  --secondary: #7CBD1E;
-  --accent: #F1F864;
+  --primary: #da9d6d;
+  --secondary: #83a35a;
+  --accent: #505673;
 }
 
 body {
   font-family: 'Poppins';
-  font-weight: 400;
   overflow-x: hidden;
 }
 
-img {
+img, svg {
   max-width: 100%;
   display: block;
 }
@@ -28,51 +27,6 @@ img {
 /*Button*/
 
 #read {
-  padding: 0.8em 1.8em;
-  border: 2px solid var(--secondary);
-  position: relative;
-  overflow: hidden;
-  background-color: transparent;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 16px;
-  transition: .3s;
-  z-index: 1;
-  font-family: inherit;
-  color: var(--background);
-  border-radius: 50px;
-  position: fixed;
-  left: 10vh;
-  top: 5vh;
-  cursor: pointer;
-  animation-name: slideRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-}
-
-#read::before {
-  content: '';
-  width: 0;
-  height: 300%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: var(--secondary);
-  transition: .5s ease;
-  display: block;
-  z-index: -1;
- }
- 
- #read:hover::before {
-  width: 105%;
- }
- 
- #read:hover {
-  color: var(--background)
- }
-
-#watch {
   padding: 0.8em 1.8em;
   border: 2px solid var(--primary);
   position: relative;
@@ -92,7 +46,7 @@ img {
   animation-timing-function: ease-in-out;
  }
  
- #watch::before {
+ #read::before {
   content: '';
   width: 0;
   height: 300%;
@@ -100,17 +54,17 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-  background: var(--secondary);
+  background: var(--accent);
   transition: .5s ease;
   display: block;
   z-index: -1;
  }
  
- #watch:hover::before {
+ #read:hover::before {
   width: 105%;
  }
  
- #watch:hover {
+ #read:hover {
   color: var(--background)
  }
  
@@ -129,7 +83,7 @@ img {
 
 .menu {
   --s: 35px; /* control the size */
-  --c: var(--secondary); /* the color */
+  --c: var(--text); /* the color */
   
   height: var(--s);
   aspect-ratio: 1;
@@ -230,7 +184,7 @@ img {
   display: inline-block;
   text-decoration: none;
   color: var(--text);
-  font-family: 'Roboto';
+  font-family: 'Poppins';
   font-size: 50px;
   font-weight: 600;
   position: relative;
@@ -263,9 +217,9 @@ img {
 
 /*Sections*/
 #hero {
-  width: 100%; 
+  width: 100%;
   height: 100vh;
-  background-image: url(assets/bg.jpg);
+  background-image: url(assets/bg.webp);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -292,6 +246,7 @@ img {
 
 .tagline {
   color: var(--text); 
+  font-family: 'Noto Serif Old Uyghur';
   font-size: 50px; 
   text-transform: uppercase; 
   word-wrap: break-word;
@@ -315,17 +270,27 @@ img {
 #about {
   width: 100%;
   height: 100vh;
-  background-color: var(--text);
+  background-color: var(--primary);
 }
 
+#about::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #da9d6d,transparent);
+  z-index: 10;
+}
 .about-container {
   position: relative;
 }
 
 .about-text {
   position: absolute;
+  font-family: 'Noto Serif Old Uyghur';
   padding-top: 5vh;
-  right: 10vh;
+  right: 20vh;
   color: var(--background); 
   font-size: 50px; 
   text-transform: uppercase; 
@@ -338,7 +303,7 @@ img {
   right: 20vh;
   font-size: 20px;
   height: 100px;
-  width: 300px;
+  width: 400px;
 }
 
 .comic-img {
@@ -356,9 +321,10 @@ img {
 }
 
 .team-text {
+  font-family: 'Noto Serif Old Uyghur';
   text-align: center;
   padding-top: 5vh;
-  color: var(--text); 
+  color: var(--background); 
   font-size: 50px; 
   text-transform: uppercase; 
   word-wrap: break-word;
@@ -447,7 +413,7 @@ img {
 #mission {
   width: 100%;
   height: 100vh;
-  background-color: var(--accent);
+  background-color: var(--primary);
 }
 
 .mission-container {
@@ -456,6 +422,7 @@ img {
 
 .mission-text {
   position: absolute;
+  font-family: 'Noto Serif Old Uyghur';
   padding-top: 5vh;
   left: 10vh;
   color: var(--background); 
@@ -466,11 +433,11 @@ img {
 
 .mission-info {
   position: absolute;
-  top: 30vh;
+  top: 25vh;
   left: 20vh;
   font-size: 20px;
   height: 100px;
-  width: 300px;
+  width: 400px;
 }
 
 .mission-img {
@@ -483,7 +450,7 @@ img {
 
 footer {
   text-align: center;
-  background-color: #7CBD1E;
+  background-color: var(--accent)
 }
 
 /*Animation*/
@@ -615,6 +582,7 @@ footer {
   }
   .mission-img {
     top: 25vh;
+    width: 40%;
   }
   #mission-img {
    width: 80%;
@@ -622,9 +590,33 @@ footer {
 
 /* tablet */
 @media (max-width: 768px) {
+  /*hero*/
+  .hero-container {
+    padding-top: 25vh;
+  }
   /* about */
-  #line {
-    display: none;
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 30vh;
+  }
+  .about-text {
+    width: 75%;
+    font-size: 30px;
+    margin-top: 15vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  }
+  .about-info {
+    width: 80%;
+    font-size: 16px;
+    margin-top: 40vh;
+    height: 0;
+  }
+  .comic-img {
+    left: 30vh;
   }
 
   /* team */
@@ -651,33 +643,58 @@ footer {
   }
 
   /* mission */
+  .mission-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 30vh;
+  }
+  .mission-text {
+    width: 75%;
+    font-size: 30px;
+    margin-top: 20vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  }
   .mission-info {
-    font-size: 18px;
-    left: 5vh;
+    font-size: 16px;
+    width: 80%;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }
   .mission-img {
-    top: 25vh;
-    right: 5vh;
+    top: 50vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }
   #mission-img {
    width: 80%;
+
   }
+}
+
+@media (max-width: 706px) {
+  /*hero*/
+  .tagline {
+    text-align: center;
+    font-size: 30px;
+  }
+  /*about*/
+
 }
 
 /* mobile l */
 @media (max-width: 431px) {
   /*header*/
-  #read {
-    padding: 0.4em 1em;
-    border: 2px solid var(--secondary);
-    font-size: 14px;
-    border-radius: 50px;
-  }
   .menu {
     --s: 25px;
   }
 
   /*hero*/
+  .hero-container {
+    padding-top: 15vh;
+  }
   #title {
     margin-top: 10vh;
     width: 80%;
@@ -697,21 +714,21 @@ footer {
 
   /*about*/
   .about-container {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     text-align: center;
     gap: 30vh;
   }
   .about-text {
-    width: 65%;
     font-size: 20px;
-    margin-top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .about-info {
     width: 65%;
     font-size: 14px;
     margin-top: 30vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }
   .comic-img {
     left: 15vh;
@@ -760,24 +777,23 @@ footer {
 
   /*mission*/
   .mission-container {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     text-align: center;
     gap: 30vh;
   }
   .mission-text {
-    width: 65%;
     font-size: 20px;
-    margin-top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .mission-info {
     width: 80%;
     font-size: 14px;
   }
   .mission-img {
-    top: 60vh;
-    left: 15vh;
+    top: 70vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }
 }
 

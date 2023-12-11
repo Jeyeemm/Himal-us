@@ -20,8 +20,8 @@
 
         <!--Navbar-->
 
-        <input type="checkbox" role="button" class="menu" id="menuIcon">
-
+        <input type="checkbox" role="button" class="menu toggle-on-double-click" id="menuIcon">
+          
         <div class="menuBox" id="menuBox">
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -30,83 +30,289 @@
           </ul>
         </div>
 
+        <!-- Add this HTML code to your existing HTML structure -->
+        <div id="tutorialModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Welcome to the page tutorial!</h2>
+            <p>Click the mute button to toggle sound.</p>
+            <p>Click the zoom button to toggle zoom feature.</p>
+            <p>Double tap to hide elements.</p>
+          </div>
+        </div>
+
+      <!-- Toggle Buttons for Sound and Zoom-->
+      
+      <button id="toggleSoundButton" class="toggle-on-double-click">
+        <i id="soundIcon" class="fas fa-volume-up"></i>
+      </button>
+      
+      <button id="toggleZoomButton" class="toggle-on-double-click">
+        <i id="zoomIcon" class="fas fa-search"></i>
+      </button>
       <!-- Slider for section navigation -->
 
-    <div id="slider-container">
-      <input type="range" id="slider" min="1" max="17" step="1" value="1">
+    <div id="slider-container" class="toggle-on-double-click">
+      <input type="range" id="slider" min="1" max="64" step="1" value="1">
     </div>
 
-    <section id="section1">
-        <img src="assets/pages/a.png">
-    </section>
+    <section id="section1"> <div class="zoom-container">
+      <img src="assets/pages/a.webp">
+    </section> </div>
 
-    <section id="section2">
-      <img src="assets/pages/b.png">
-    </section>
+    <section id="section2"> <div class="zoom-container">
+      <img src="assets/pages/b.webp">
+    </section> </div>
 
-    <section id="section3">
-      <img src="assets/pages/c.png">
-    </section>
+    <section id="section3"> <div class="zoom-container">
+      <img src="assets/pages/c.webp">
+    </section> </div>
 
-    <section id="section4">
-      <img src="assets/pages/p1.png">
-    </section>
+    <section id="section4"> <div class="zoom-container">
+      <img src="assets/pages/p1.webp">
+    </section> </div>
 
-    <section id="section5">
-      <img src="assets/pages/p2.png">
-    </section>
+    <section id="section5"> <div class="zoom-container">
+      <img src="assets/pages/p2.webp">
+    </section> </div>
 
-    <section id="section6">
+    <section id="section6"> <div class="zoom-container">
     <img src="assets/pages/p3.gif">
-    </section>
+    </section> </div>
 
-    <section id="section7">
-    <img src="assets/pages/p4.png">
-    </section>
+    <section id="section7"> <div class="zoom-container">
+    <img src="assets/pages/p4.webp">
+    </section> </div>
 
-    <section id="section8">
-    <img src="assets/pages/p5.png">
-    </section>
+    <section id="section8"> <div class="zoom-container">
+    <img src="assets/pages/p5.webp">
+    </section> </div>
 
-    <section id="section9">
-        <img src="assets/pages/p6.png">
-    </section>
+    <section id="section9"> <div class="zoom-container">
+        <img src="assets/pages/p6.webp">
+    </section> </div>
 
-    <section id="section10">
-      <img src="assets/pages/p7.png">
-    </section>
+    <section id="section10"> <div class="zoom-container">
+      <img src="assets/pages/p7.webp">
+    </section> </div>
 
-    <section id="section11">
-      <img src="assets/pages/p8.png">
-    </section>
+    <section id="section11"> <div class="zoom-container">
+      <img src="assets/pages/p8.webp">
+    </section> </div>
 
-    <section id="section12">
-      <img src="assets/pages/p9.png">
-    </section>
+    <section id="section12"> <div class="zoom-container">
+      <img src="assets/pages/p9.webp">
+    </section> </div>
 
-    <section id="section13">
-      <img src="assets/pages/p10.png">
-    </section>
+    <section id="section13"> <div class="zoom-container">
+      <img src="assets/pages/p10.webp">
+    </section> </div>
 
-    <section id="section14">
-    <img src="assets/pages/p11.png">
-    </section>
+    <section id="section14"> <div class="zoom-container">
+      <img src="assets/pages/p11.webp">
+    </section> </div>
 
-    <section id="section15">
-    <img src="assets/pages/p12.png">
-    </section>
+    <section id="section15"> <div class="zoom-container">
+      <img src="assets/pages/p12.webp">
+    </section> </div>
 
-    <section id="section16">
-    <img src="assets/pages/p13.png">
-    </section>
+    <section id="section16"> <div class="zoom-container">
+    <img src="assets/pages/p13.gif">
+    </section> </div>
 
-    <section id="section17">
-      <img src="assets/pages/p14.png">
-    </section>
+    <section id="section17"> <div class="zoom-container">
+    <img src="assets/pages/p14.webp">
+    </section> </div>
+
+    <section id="section18"> <div class="zoom-container">
+    <img src="assets/pages/p15.webp">
+    </section> </div>
+
+    <section id="section19"> <div class="zoom-container">
+        <img src="assets/pages/p16.webp">
+    </section> </div>
+
+    <section id="section20"> <div class="zoom-container">
+      <img src="assets/pages/p17.webp">
+    </section> </div>
+
+    <section id="section21"> <div class="zoom-container">
+      <img src="assets/pages/p18.webp">
+    </section> </div>
+
+    <section id="section22"> <div class="zoom-container">
+      <img src="assets/pages/p19.webp">
+    </section> </div>
+
+    <section id="section23"> <div class="zoom-container">
+      <img src="assets/pages/p20.webp">
+    </section> </div>
+
+    <section id="section24"> <div class="zoom-container">
+      <img src="assets/pages/p21.webp">
+    </section> </div>
+
+    <section id="section25"> <div class="zoom-container">
+      <img src="assets/pages/p22.webp">
+    </section> </div>
+
+    <section id="section26"> <div class="zoom-container">
+    <img src="assets/pages/p23.webp">
+    </section> </div>
+
+    <section id="section27"> <div class="zoom-container">
+    <img src="assets/pages/p24.webp">
+    </section> </div>
+
+    <section id="section28"> <div class="zoom-container">
+    <img src="assets/pages/p25.webp">
+    </section> </div>
+
+    <section id="section29"> <div class="zoom-container">
+        <img src="assets/pages/p26.webp">
+    </section> </div>
+
+    <section id="section30"> <div class="zoom-container">
+      <img src="assets/pages/p27.webp">
+    </section> </div>
+
+    <section id="section31"> <div class="zoom-container">
+      <img src="assets/pages/p28.webp">
+    </section> </div>
+
+    <section id="section32"> <div class="zoom-container">
+      <img src="assets/pages/p29.webp">
+    </section> </div>
+
+    <section id="section33"> <div class="zoom-container">
+      <img src="assets/pages/p30.webp">
+    </section> </div>
+
+    <section id="section34"> <div class="zoom-container">
+      <img src="assets/pages/31.webp">
+    </section> </div>
+
+    <section id="section35"> <div class="zoom-container">
+      <img src="assets/pages/32.webp">
+    </section> </div>
+
+    <section id="section36"> <div class="zoom-container">
+    <img src="assets/pages/p33.gif">
+    </section> </div>
+
+    <section id="section37"> <div class="zoom-container">
+    <img src="assets/pages/p34.webp">
+    </section> </div>
+
+    <section id="section38"> <div class="zoom-container">
+    <img src="assets/pages/p35.webp">
+    </section> </div>
+
+    <section id="section39"> <div class="zoom-container">
+        <img src="assets/pages/p36.webp">
+    </section> </div>
+
+    <section id="section40"> <div class="zoom-container">
+      <img src="assets/pages/p47.webp">
+    </section> </div>
+
+    <section id="section41"> <div class="zoom-container">
+      <img src="assets/pages/p38.webp">
+    </section> </div>
+
+    <section id="section42"> <div class="zoom-container">
+      <img src="assets/pages/p39.webp">
+    </section> </div>
+
+    <section id="section43"> <div class="zoom-container">
+      <img src="assets/pages/p40.webp">
+    </section> </div>
+    <section id="section44"> <div class="zoom-container">
+      <img src="assets/pages/p41.webp">
+    </section> </div>
+
+    <section id="section45"> <div class="zoom-container">
+      <img src="assets/pages/p42.webp">
+    </section> </div>
+
+    <section id="section46"> <div class="zoom-container">
+    <img src="assets/pages/p43.webp">
+    </section> </div>
+
+    <section id="section47"> <div class="zoom-container">
+    <img src="assets/pages/p44.webp">
+    </section> </div>
+
+    <section id="section48"> <div class="zoom-container">
+    <img src="assets/pages/p45.webp">
+    </section> </div>
+
+    <section id="section49"> <div class="zoom-container">
+        <img src="assets/pages/p46.webp">
+    </section> </div>
+
+    <section id="section50"> <div class="zoom-container">
+      <img src="assets/pages/p47.webp">
+    </section> </div>
+
+    <section id="section51"> <div class="zoom-container">
+      <img src="assets/pages/p48.webp">
+    </section> </div>
+
+    <section id="section52"> <div class="zoom-container">
+      <img src="assets/pages/p49.webp">
+    </section> </div>
+
+    <section id="section53"> <div class="zoom-container">
+      <img src="assets/pages/p50.webp">
+    </section> </div>
+    <section id="section54"> <div class="zoom-container">
+      <img src="assets/pages/p51.webp">
+    </section> </div>
+
+    <section id="section55"> <div class="zoom-container">
+      <img src="assets/pages/p52.webp">
+    </section> </div>
+
+    <section id="section56"> <div class="zoom-container">
+    <img src="assets/pages/p53.webp">
+    </section> </div>
+
+    <section id="section57"> <div class="zoom-container">
+    <img src="assets/pages/p54.webp">
+    </section> </div>
+
+    <section id="section58"> <div class="zoom-container">
+    <img src="assets/pages/p55.webp">
+    </section> </div>
+
+    <section id="section59"> <div class="zoom-container">
+        <img src="assets/pages/p56.webp">
+    </section> </div>
+
+    <section id="section60"> <div class="zoom-container">
+      <img src="assets/pages/p57.webp">
+    </section> </div>
+
+    <section id="section61"> <div class="zoom-container">
+      <img src="assets/pages/p58.webp">
+    </section> </div>
+
+    <section id="section62"> <div class="zoom-container">
+      <img src="assets/pages/p59.webp">
+    </section> </div>
+
+    <section id="section63"> <div class="zoom-container">
+      <img src="assets/pages/p60.webp">
+    </section> </div>
+
+    <section id="section64"> <div class="zoom-container">
+      <img src="assets/pages/p61.webp">
+    </section> </div>
 
     <!-- Page Indicator -->
 
-    <div id="page-indicator">Page <span id="page-number">1</span> of 17</div>
+    <div id="page-indicator" class="toggle-on-double-click">Page <span id="page-number">1</span> of 64</div>
 
     <!-- Audio Elements for Section Sounds -->
 
@@ -160,7 +366,148 @@
     </audio>
     <audio id="sound17">
       <source src="s1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound18">
+      <source src="sound3.mp3" type="audio/mpeg">
   </audio>
+  <audio id="sound19">
+      <source src="s1.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound20">
+      <source src="s2.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound21">
+      <source src="sound3.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound22">
+      <source src="s1.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound23">
+      <source src="s2.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound24">
+      <source src="sound3.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound25">
+      <source src="s1.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound26">
+      <source src="s2.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound27">
+      <source src="sound3.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound28">
+      <source src="s1.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound29">
+    <source src="s1.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="sound30">
+    <source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound31">
+    <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound32">
+    <source src="s2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound33">
+    <source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound34">
+    <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound35">
+    <source src="s2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound36">
+    <source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound37">
+    <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound38">
+    <source src="s2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound39">
+    <source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound40">
+    <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound41">
+  <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound42">
+  <source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound43">
+  <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound44">
+  <source src="s2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound45">
+  <source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound46">
+  <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound47">
+  <source src="s2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound48">
+  <source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound49">
+  <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound50">
+  <source src="s2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound51">
+  <source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound52">
+  <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound53">
+<source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound54">
+  <source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound55">
+<source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound56">
+<source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound57">
+<source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound58">
+<source src="s2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound59">
+<source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound60">
+<source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound61">
+<source src="s2.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound62">
+<source src="sound3.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound63">
+<source src="s1.mp3" type="audio/mpeg">
+</audio>
+<audio id="sound64">
+<source src="s2.mp3" type="audio/mpeg">
+</audio>
        
         </main>
 
@@ -184,50 +531,243 @@
         const sections = document.querySelectorAll('section');
         const pageIndicator = document.getElementById('page-number');
 
-        // Create an array of audio elements for all sections
-          const sectionSounds = [
-              document.getElementById('sound1'),
-              document.getElementById('sound2'),
-              document.getElementById('sound3'),
-              document.getElementById('sound4'),
-              document.getElementById('sound5'),
-              document.getElementById('sound6'),
-              document.getElementById('sound7'),
-              document.getElementById('sound8'),
-              document.getElementById('sound9'),
-              document.getElementById('sound10'),
-              document.getElementById('sound11'),
-              document.getElementById('sound12'),
-              document.getElementById('sound13'),
-              document.getElementById('sound14'),
-              document.getElementById('sound15'),
-              document.getElementById('sound16'),
-              document.getElementById('sound17')
-          ];
+        let isHidden = false; // Variable to track the visibility state
 
+// Function to toggle visibility of elements
+const toggleVisibility = () => {
+  const elementsToToggle = document.querySelectorAll('.toggle-on-double-click');
 
-        let currentlyInView = 1; // Initialize the currently in view section to 1
+  elementsToToggle.forEach((element) => {
+    element.classList.toggle('hidden');
+  });
 
-        // Function to update the slider and page indicator when scrolling to a new section
-        const updateSlider = () => {
-          sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-          if (rect.top >= 0 && rect.top <= window.innerHeight) {
-            currentlyInView = index; // Subtract 1 to match the index
-            // Play the sound associated with the current section
-            sectionSounds[currentlyInView].currentTime = 0; // Reset sound to the beginning
-            sectionSounds[currentlyInView].play();
-           }
-          });
-        slider.value = currentlyInView + 1; // Add 1 to match the page number
-    pageIndicator.textContent = currentlyInView + 1; // Add 1 to match the page number
+  isHidden = !isHidden; // Toggle the visibility state
 };
 
-        // Attach a scroll event listener to update the slider and page indicator
-        window.addEventListener('scroll', updateSlider);
+// Attach double click event listener to the body
+document.body.addEventListener('dblclick', toggleVisibility);
 
-        // Update the slider and page indicator initially
-        updateSlider();
+// Updated JavaScript code
+
+// Function to check if the modal should be displayed
+const shouldDisplayModal = () => {
+  // Check if the 'modalDisplayed' cookie is not set
+  return document.cookie.indexOf('modalDisplayed=true') === -1;
+};
+
+// Function to set a cookie indicating that the modal has been displayed
+const setModalDisplayedCookie = () => {
+  document.cookie = 'modalDisplayed=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
+};
+
+// Function to display the tutorial modal
+const openModal = () => {
+  const modal = document.getElementById('tutorialModal');
+  modal.style.display = 'block';
+};
+
+// Function to close the tutorial modal
+const closeModal = () => {
+  const modal = document.getElementById('tutorialModal');
+  modal.style.display = 'none';
+};
+
+// Show the tutorial modal when the page loads, if not displayed before
+document.addEventListener('DOMContentLoaded', function () {
+  if (shouldDisplayModal()) {
+    openModal();
+    setModalDisplayedCookie();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleSoundButton = document.getElementById('toggleSoundButton');
+  const sectionSounds = document.querySelectorAll('audio');
+
+  let isMuted = false;
+
+  // Function to toggle mute for all audio elements
+  const toggleMute = () => {
+    isMuted = !isMuted; // Toggle the mute state
+
+    // Loop through all audio elements and mute/unmute them
+    sectionSounds.forEach((sound) => {
+      sound.muted = isMuted;
+    });
+
+    // Update the icon based on the mute state
+    updateMuteIcon();
+  };
+
+  // Attach an event listener to the button
+  toggleSoundButton.addEventListener('click', toggleMute);
+
+  // Function to update the mute icon based on the mute state
+  const updateMuteIcon = () => {
+    const volumeIcon = toggleSoundButton.querySelector('i');
+
+    // Update the icon based on the mute state
+    if (isMuted) {
+      volumeIcon.classList.remove('fa-volume-up');
+      volumeIcon.classList.add('fa-volume-mute');
+    } else {
+      volumeIcon.classList.remove('fa-volume-mute');
+      volumeIcon.classList.add('fa-volume-up');
+    }
+  };
+
+  // Initialize the mute icon
+  updateMuteIcon();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const zoomContainers = document.querySelectorAll('.zoom-container');
+  const toggleZoomButton = document.getElementById('toggleZoomButton');
+
+  let isZoomEnabled = false;
+
+  toggleZoomButton.addEventListener('click', function () {
+    isZoomEnabled = !isZoomEnabled;
+
+    // Reset the zoom level and transform for all images when the zoom feature is turned off
+    if (!isZoomEnabled) {
+      zoomContainers.forEach(container => {
+        container.style.transform = 'scale(1)';
+      });
+      // Change the cursor back to the default when zoom is disabled
+      document.body.style.cursor = 'auto';
+    } else {
+      // Change the cursor to zoom in when the zoom feature is enabled
+      document.body.style.cursor = 'zoom-in';
+    }
+  });
+
+  zoomContainers.forEach(container => {
+    container.addEventListener('mouseenter', function () {
+      if (isZoomEnabled) {
+        container.style.transition = 'transform 0.3s ease-in-out';
+        container.style.transform = 'scale(1.5)';
+      }
+    });
+
+    container.addEventListener('mouseleave', function () {
+      if (isZoomEnabled) {
+        container.style.transform = 'scale(1)';
+      }
+    });
+  });
+});
+
+
+const sectionSounds = [
+  document.getElementById('sound1'),
+  document.getElementById('sound2'),
+  document.getElementById('sound3'),
+  document.getElementById('sound4'),
+  document.getElementById('sound5'),
+  document.getElementById('sound6'),
+  document.getElementById('sound7'),
+  document.getElementById('sound8'),
+  document.getElementById('sound9'),
+  document.getElementById('sound10'),
+  document.getElementById('sound11'),
+  document.getElementById('sound12'),
+  document.getElementById('sound13'),
+  document.getElementById('sound14'),
+  document.getElementById('sound15'),
+  document.getElementById('sound16'),
+  document.getElementById('sound17'),
+  document.getElementById('sound18'),
+  document.getElementById('sound19'),
+  document.getElementById('sound20'),
+  document.getElementById('sound21'),
+  document.getElementById('sound22'),
+  document.getElementById('sound23'),
+  document.getElementById('sound24'),
+  document.getElementById('sound25'),
+  document.getElementById('sound26'),
+  document.getElementById('sound27'),
+  document.getElementById('sound28'),
+  document.getElementById('sound29'),
+  document.getElementById('sound30'),
+  document.getElementById('sound31'),
+  document.getElementById('sound32'),
+  document.getElementById('sound33'),
+  document.getElementById('sound34'),
+  document.getElementById('sound35'),
+  document.getElementById('sound36'),
+  document.getElementById('sound37'),
+  document.getElementById('sound38'),
+  document.getElementById('sound39'),
+  document.getElementById('sound40'),
+  document.getElementById('sound41'),
+  document.getElementById('sound42'),
+  document.getElementById('sound43'),
+  document.getElementById('sound44'),
+  document.getElementById('sound45'),
+  document.getElementById('sound46'),
+  document.getElementById('sound47'),
+  document.getElementById('sound48'),
+  document.getElementById('sound49'),
+  document.getElementById('sound50'),
+  document.getElementById('sound51'),
+  document.getElementById('sound52'),
+  document.getElementById('sound53'),
+  document.getElementById('sound54'),
+  document.getElementById('sound55'),
+  document.getElementById('sound56'),
+  document.getElementById('sound57'),
+  document.getElementById('sound58'),
+  document.getElementById('sound59'),
+  document.getElementById('sound60'),
+  document.getElementById('sound61'),
+  document.getElementById('sound62'),
+  document.getElementById('sound63'),
+  document.getElementById('sound64')
+];
+
+let currentlyInView = 1;
+let soundPlayed = Array(sectionSounds.length).fill(false);
+
+const updateSound = () => {
+  sectionSounds.forEach((sound, index) => {
+    if (index === currentlyInView - 1) {
+      if (!soundPlayed[index]) {
+        sound.currentTime = 0;
+        sound.play();
+        soundPlayed[index] = true;
+      }
+    } else if (soundPlayed[index]) {
+      sound.pause();
+      sound.currentTime = 0;
+      soundPlayed[index] = false;
+    }
+  });
+};
+
+const updateSlider = () => {
+  sections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+      currentlyInView = index + 1;
+      updateSound();
+    }
+  });
+
+  slider.value = currentlyInView;
+  pageIndicator.textContent = currentlyInView;
+};
+
+window.addEventListener('scroll', updateSlider);
+
+slider.addEventListener('input', () => {
+  currentlyInView = parseInt(slider.value);
+  updateSound();
+  pageIndicator.textContent = currentlyInView;
+});
+
+updateSlider(); // Initial update
+
 
         // Update the section when the slider value changes
         slider.addEventListener('input', () => {

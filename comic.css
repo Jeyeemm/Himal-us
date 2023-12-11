@@ -9,9 +9,9 @@
 :root {
   --text: #fef9ec;
   --background: #070303;
-  --primary: #1684A7;
-  --secondary: #7CBD1E;
-  --accent: #F1F864;
+  --primary: #da9d6d;
+  --secondary: #83a35a;
+  --accent: #505673;
 }
 
 body {
@@ -19,8 +19,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
 }
 
 section {
@@ -36,6 +34,12 @@ img {
   height: auto;
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none; /* Optional: disable interactions on hidden elements */
+  transition: opacity 0.3s ease; /* Optional: add a transition effect */
+}
+
 #menuIcon {
   cursor: pointer;
   z-index: 3;
@@ -46,7 +50,7 @@ img {
 
 .menu {
   --s: 35px; /* control the size */
-  --c: var(--secondary); /* the color */
+  --c: var(--text); /* the color */
   
   height: var(--s);
   aspect-ratio: 1;
@@ -178,26 +182,189 @@ img {
   box-shadow: -2px 2px 0 var(--secondary);
 }
 
-#slider-container {
+/* Updated CSS for the modal */
+.modal {
+  display: none;
   position: fixed;
-  bottom: 0;
+  z-index: 4;
   left: 0;
+  top: 0;
   width: 100%;
-  padding: 10px;
-  z-index: 1; /* Ensure the slider is above other content */
-  text-align: center; /* Center the slider horizontally */
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Styling for the slider */
-.slider {
-  width: 50%;
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
 }
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #555;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #333;
+}
+
+/* Added a fade-in effect for the modal */
+.modal-content {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style the paragraph inside the modal */
+.modal-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Style the modal title */
+.modal-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style the close button */
+.close {
+  color: #888;
+  cursor: pointer;
+  font-size: 28px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #333;
+}
+
+#toggleSoundButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px;
+  background-color: transparent; /* Set the background to transparent */
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s; /* Add a transition effect for color change */
+  z-index: 1;
+}
+
+#toggleSoundButton i {
+  font-size: 24px;
+  margin-right: 5px;
+  background-color: transparent; /* Set the background of the icon to transparent */
+}
+
+#toggleZoomButton {
+  position: fixed;
+  bottom: 20px;
+  left: 80px;
+  padding: 10px;
+  background-color: transparent; /* Set the background to transparent */
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s; /* Add a transition effect for color change */
+  z-index: 1;
+}
+
+#toggleZoomButton:hover { 
+  font-size: 24px;
+  margin-right: 5px;
+  background-color: transparent; /* Set the background of the icon to transparent */
+}
+
+/* Updated CSS for the slider */
+#slider-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  z-index: 1;
+}
+
+#slider {
+  width: 100%;
+  height: 10px; /* Adjust the height as needed */
+  -webkit-appearance: none;
+  appearance: none;
+  background: #555;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 5px;
+}
+
+#slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px; /* Adjust the height as needed */
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  border: 2px solid #555;
+}
+
+#slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px; /* Adjust the height as needed */
+  background: #fff;
+  border: 2px solid #555;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+#slider:hover::-webkit-slider-thumb,
+#slider:hover::-moz-range-thumb {
+  transform: scale(1.2);
+}
+
 
 /* Styling for the page indicator */
 #page-indicator {
   position: fixed;
   bottom: 40px; /* Adjust the position as needed */
   left: 50%;
+  font-family: 'Poppins';
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
