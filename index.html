@@ -40,6 +40,8 @@
 
       <body>
 
+        <div class="loader" id="loader"></div>
+
         <video id="background-video" autoplay muted>
           <source src="/assets/intro.mp4" type="video/mp4">
         </video>
@@ -202,6 +204,11 @@
   </body>
 
   <script>
+
+window.onload = function () {
+  // Hide the loader when the entire page has finished loading
+  document.getElementById("loader").style.display = "none";
+};
     
   function hideVideo() {
     const video = document.getElementById("background-video");
