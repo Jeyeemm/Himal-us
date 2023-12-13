@@ -356,6 +356,7 @@ img, svg {
   font-family: 'Noto Serif Old Uyghur';
   text-align: center;
   padding-top: 5vh;
+  padding-bottom: 5vh;
   color: var(--background); 
   font-size: 50px; 
   text-transform: uppercase; 
@@ -626,6 +627,9 @@ footer {
   .hero-container {
     padding-top: 25vh;
   }
+  #menuIcon  {
+    right: 10px;
+  }
   /* about */
   .about-container {
     display: flex;
@@ -648,7 +652,8 @@ footer {
     height: 0;
   }
   .comic-img {
-    left: 30vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }
 
   /* team */
@@ -712,8 +717,6 @@ footer {
     text-align: center;
     font-size: 30px;
   }
-  /*about*/
-
 }
 
 /* mobile l */
@@ -824,6 +827,13 @@ footer {
   }
   .mission-img {
     top: 70vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  }
+}
+
+@media (max-width: 431px) {
+  .comic-img {
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }

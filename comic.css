@@ -392,3 +392,20 @@ html {
   scroll-behavior: smooth;
 }
 }
+
+/*Media Queries*/
+@media (max-width: 768px) {
+  .menu {
+    --s: 30px
+  }
+  #menuIcon {
+    right: 10px;
+  }
+}
+@media (max-width: 376px) {
+  #toggleZoomButton {
+    left: 20px;
+    bottom: 70px
+  }
+
+}
