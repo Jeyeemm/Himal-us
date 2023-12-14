@@ -244,14 +244,12 @@ img, svg {
   100% { transform: rotate(360deg); }
 }
 
-
-#background-video {
+#background-image {
   position: fixed;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 5;
-  transition: opacity 1s ease-in-out; /* Add a fade transition */
 }
 
 #close-button {

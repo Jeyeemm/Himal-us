@@ -42,9 +42,7 @@
 
         <div class="loader" id="loader"></div>
 
-        <video id="background-video" autoplay muted>
-          <source src="/assets/intro.mp4" type="video/mp4">
-        </video>
+        <img id="background-image" src="assets/intro.gif" alt="Intro GIF" onload="handleImageLoad()">
 
         <button id="close-button" onclick="hideVideo()"><i class="fas fa-times-circle"></i></button>
 
@@ -209,54 +207,58 @@ window.onload = function () {
   // Hide the loader when the entire page has finished loading
   document.getElementById("loader").style.display = "none";
 };
+
+const imageVersion = 1; // Update this version number whenever you want to force a reload
+
+  // Dynamically set the image URL with the version number
+  const imageUrl = `/assets/intro.gif?v=${imageVersion}`;
     
-  function hideVideo() {
-    const video = document.getElementById("background-video");
-    const closeButton = document.getElementById("close-button");
-    const content = document.getElementById("content");
+function handleImageLoad() {
+  const backgroundImage = document.getElementById("background-image");
 
-    // Hide the video and close button
-    video.style.opacity = 0;
-    closeButton.style.opacity = 0;
+  // Set the image URL dynamically with the version number
+  backgroundImage.src = imageUrl;
 
-    // Show the content with a delay
+  // Set the onload event dynamically for the image
+  backgroundImage.onload = function () {
     setTimeout(function () {
-      content.style.opacity = 1;
-    }, 500); // Adjust the delay as needed
+      hideVideo();
+      document.getElementById("loader").style.display = "none"; // Hide the loader when the GIF is loaded
+    }, 14500); // Adjust the duration (5000 milliseconds) based on your GIF loop time
+  };
 
-    // Allow overflow after video playback
-    document.body.style.overflow = "auto";
-
-    // Hide the video by setting display to 'none' after the animation
-    setTimeout(function () {
-      video.style.display = "none";
-    }, 1000); // Adjust the delay to match your animation duration
+  // In case the image is already cached, manually trigger the onload event
+  if (backgroundImage.complete) {
+    backgroundImage.onload();
   }
+}
 
-  // Show the video when needed
-  function showVideo() {
-    const video = document.getElementById("background-video");
-    const closeButton = document.getElementById("close-button");
-    const content = document.getElementById("content");
+function hideVideo() {
+  const backgroundImage = document.getElementById("background-image");
+  const closeButton = document.getElementById("close-button");
+  const content = document.getElementById("content");
 
-    // Display the video
-    video.style.display = "block";
+  // Apply fade-out transition to the image and close button
+  backgroundImage.style.transition = "opacity 0.5s ease-in-out";
+  closeButton.style.transition = "opacity 0.5s ease-in-out";
 
-    // Hide the content
-    content.style.opacity = 0;
+  // Hide the image and close button with fade-out effect
+  backgroundImage.style.opacity = 0;
+  closeButton.style.opacity = 0;
 
-    // Show the video and close button
-    setTimeout(function () {
-      video.style.opacity = 1;
-      closeButton.style.opacity = 1;
-    }, 500); // Adjust the delay as needed
+  // Show the content with a delay
+  setTimeout(function () {
+    content.style.opacity = 1;
+  }, 500); // Adjust the delay as needed
 
-    // Prevent scrolling during video playback
-    document.body.style.overflow = "hidden";
-  }
+  // Allow overflow after video playback
+  document.body.style.overflow = "auto";
 
-  // Add event listener for the "ended" event
-  document.getElementById("background-video").addEventListener("ended", hideVideo);
+  // Hide the image by setting display to 'none' after the animation
+  setTimeout(function () {
+    backgroundImage.style.display = "none";
+  }, 1000); // Adjust the delay to match your animation duration
+}
     
     //menu
     let menuBox = document.getElementById("menuBox");
