@@ -67,7 +67,50 @@ img, svg {
  #read:hover {
   color: var(--background)
  }
+
+ #read2 {
+  padding: 0.8em 1.8em;
+  border: 2px solid var(--accent);
+  position: absolute;
+  top: 85vh;
+  left: 35vh;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: var(--background);
+  border-radius: 50px;
+  cursor: pointer;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+ }
  
+ #read2::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--secondary);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ 
+ #read2:hover::before {
+  width: 105%;
+ }
+ 
+ #read2:hover {
+  color: var(--text)
+ }
 
 /*Menu*/
 #menuIcon {
@@ -485,7 +528,7 @@ img, svg {
   position: absolute;
   font-family: 'Noto Serif Old Uyghur';
   padding-top: 5vh;
-  left: 10vh;
+  left: 25vh;
   color: var(--background); 
   font-size: 50px; 
   text-transform: uppercase; 
@@ -503,8 +546,7 @@ img, svg {
 
 .mission-img {
   position: absolute;
-  top: 5vh;
-  right: 10vh;
+  right: 15vh;
   width: 45%;
   height: 45%;
 }
@@ -735,7 +777,11 @@ footer {
   }
   #mission-img {
    width: 80%;
-
+  }
+  #read2 {
+    margin-top: 5vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }
 }
 
@@ -769,7 +815,7 @@ footer {
     width: 50%;
     font-size: 8px;
   }
-  #watch {
+  #read {
     padding: 0.8em 1.4em;
     font-size: 12px;
     border-radius: 25px;
@@ -795,6 +841,8 @@ footer {
   }
   .comic-img {
     left: 15vh;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }
   #comic {
     width: 100%;
@@ -854,16 +902,14 @@ footer {
     font-size: 14px;
   }
   .mission-img {
-    top: 70vh;
+    top: 65vh;
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center horizontally and vertically */
   }
-}
-
-@media (max-width: 431px) {
-  .comic-img {
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  #read2 {
+    padding: 0.8em 1.4em;
+    font-size: 12px;
+    border-radius: 25px;
   }
 }
 

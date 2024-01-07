@@ -9,13 +9,13 @@
 :root {
   --text: #fef9ec;
   --background: #070303;
-  --primary: #1684A7;
-  --secondary: #7CBD1E;
-  --accent: #F1F864;
+  --primary: #da9d6d;
+  --secondary: #83a35a;
+  --accent: #505673;
 }
 
 body {
-  background-color: #343434;
+  background-color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@ body {
 
 .menu {
   --s: 35px; /* control the size */
-  --c: var(--secondary); /* the color */
+  --c: var(--text); /* the color */
   
   height: var(--s);
   aspect-ratio: 1;
@@ -169,10 +169,11 @@ body {
   font-size: 3em;
   font-family: 'Poppins';
   font-weight: bolder;
+  color: var(--background);
   margin-bottom: 10vh;
   margin-top: 10vh;
   text-align: center;
-  border-bottom: 5px solid #222;
+  border-bottom: 5px solid var(--accent);
 }
 
 .photoGallery {
